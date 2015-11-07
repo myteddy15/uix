@@ -32,7 +32,7 @@
 <body>
 
     <div id="wrapper">
-
+		<div class="sidebar-blind"></div>
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
 			<div class="navbar navbar-default" id="offcanvas-navbar-toggle">
@@ -40,7 +40,6 @@
 				   <span>toggle menu</span>
 				</button>
 			</div>
-				<div class="sidebar-blind"></div>
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <div id="user-name"> User Name</div>
@@ -91,13 +90,13 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-		<div class="navbar navbar-default" id="navbar-toggle">
+		<div class="navbar navbar-default navbar-fixed-top" id="navbar-toggle">
 				<button type="button" class="navbar-toggle c-hamburger c-hamburger--htx"  id="menu-toggle-1" >
 				   <span>toggle menu</span>
 				</button>
 				<a class="navbar-brand" href="#">Module name</a>
 			</div>
-		<button class="btn btn-primary btn-md btn-fab top right"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		<button class="btn btn-primary btn-md btn-fab fixed bottom center"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>
         <div id="page-content-wrapper" class="animate">
             <div class="container">
             	<div class="row">
@@ -125,45 +124,163 @@
             	    		<div class="list-group">
 							  <div class="list-group-item">
 							   	<div class="form-group">
-							   		<label for=""> Name</label>
 							   		<div class="row">
-							   			<div class="col-md-6">
-							   				<input type="text" class="form-control" placeholder="First Name">
+										<div class="col-md-6">
+											<label for="">First Name</label>
+							   				<input type="text" class="form-control" placeholder="Given name">
 							   			</div>
 							   			<div class="col-md-6">
-							   				<input type="text" class="form-control" placeholder="Last Name">
+											<label for="">Middle Name</label>
+							   				<input type="text" class="form-control" placeholder="Middle name">
+							   			</div>
+							   		</div>
+							   	</div>
+								<div class="form-group">
+							   		<div class="row">
+							   			<div class="col-md-6">
+											<label for="">Last Name</label>
+							   				<input type="text" class="form-control" placeholder="Family name">
+							   			</div>
+							   			<div class="col-md-6">
+											<label for="">Suffix</label>
+							   				<input type="text" class="form-control" placeholder="Jr., III">
 							   			</div>
 							   		</div>
 							   	</div>
 							   	<div class="form-group">
-							   		<label for=""> Gender</label>
-							   		<div class="btn-group" role="group" aria-label="...">
-									  <button type="button" class="btn btn-default">Male</button>
-									  <button type="button" class="btn btn-default">Female</button>
+									<div class="row">
+							   			<div class="col-md-6">
+											<label for=""> Gender</label>
+											<div class="btn-group btn-group-justified">
+											  <div class="btn-group">
+												<button type="button" class="btn btn-default">Male</button>
+											  </div>
+											  <div class="btn-group">
+												<button type="button" class="btn btn-default">Female</button>
+											  </div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<label for=""> Birthday</label>
+											<input type="date" class="form-control" placeholder="mm/dd/yyy">
+										</div>
 									</div>
 							   	</div>
-							   	<div class="form-group">
-							   		<label for=""> Birthday</label>
-							   		<div class="row">
+								<div class="form-group">
+									<div class="row">
+							   			<div class="col-md-12">
+											<label for=""> Birth Place</label>
+											<input type="text" class="form-control" placeholder="Address" />
+										</div>
+									</div>
+							   	</div>
+								<div class="form-group">
+									<div class="row">
 							   			<div class="col-md-6">
-							   				<input type="date" class="form-control" placeholder="mm/dd/yyy">
-							   			</div>
-							   		</div>
+											<label for=""> Department</label>
+											<div class="btn-group btn-group-justified">
+											  <div class="btn-group">
+												<button type="button" class="btn btn-default">Preschool</button>
+											  </div>
+											  <div class="btn-group">
+												<button type="button" class="btn btn-default">Grade S.</button>
+											  </div>
+											  <div class="btn-group">
+												<button type="button" class="btn btn-default">High S.</button>
+											  </div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<label for=""> Level</label>
+											<select name="" id="" class="form-control">
+												<option value="">Select Level</option>
+												<option value="1">Grade 1
+												</option>
+												<option value="2">Grade 2
+												</option>
+												<option value="3">Grade 3
+												</option>
+												<option value="4">Grade 4
+												</option>
+												<option value="5">Grade 5
+												</option>
+												<option value="6">Grade 6
+												</option>
+											</select>
+										</div>
+									</div>
 							   	</div>
 							  </div>
-							  <div href="#" class="list-group-item">
-							    <label>Select One</label>
-							  </div>
-							  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-							  <a href="#" class="list-group-item">Morbi leo risus</a>
-							  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-							  <a href="#" class="list-group-item">Vestibulum at eros</a>
-							  <div href="#" class="list-group-item">
-							    <input type="text" class="form-control input-lg" placeholder="Search">
-							  </div>
+								<div class="list-group-item">
+									<div class="btn-group btn-group-justified">
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default btn-lg">Prev</button>
+									  </div>
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default btn-lg">Next</button>
+									  </div>
+									</div>
+								</div>
 							</div>
             	    	</div>
-            	    	<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<button class="btn btn-primary btn-fab top right"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+							<div class="list-group"> 
+								<div class="list-group-item"> 
+									<label for="">Summary</label>
+								</div>
+								<div class="list-group-item"> 
+									First Name M. Last Name
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+								<div class="list-group-item">&nbsp;
+								</div>
+							</div>
+            	    	</div>
+					</div>
+					<div class="row">
+            	    	<div class="col-md-6">
+							 <div class="list-group">
+								  <div href="#" class="list-group-item">
+									<label>Select One</label>
+								  </div>
+								  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+								  <a href="#" class="list-group-item">Morbi leo risus</a>
+								  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+								  <a href="#" class="list-group-item">Vestibulum at eros</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <div href="#" class="list-group-item">
+									<input type="text" class="form-control input-lg" placeholder="Search">
+								  </div>
+								  <div class="list-group-item">
+									<div class="btn-group btn-group-justified">
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default btn-lg">Prev</button>
+									  </div>
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default btn-lg">Next</button>
+									  </div>
+									</div>
+								</div>
+							  </div>
+						</div>
             	    </div>   
                 <div class="row">
                     <div class="col-lg-12">

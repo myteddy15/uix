@@ -17,7 +17,7 @@ body{ overflow-x:hidden;}
 
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 2000;
     position: fixed;
     left: 250px;
     width: 0;
@@ -36,25 +36,31 @@ body{ overflow-x:hidden;}
     width: 250px;
 }
 .sidebar-blind {
-    content: " ";
-    display: inline-block;
+	position:fixed;
+    display: block;
     width: 0%;
     height: 100%;
-    background: rgba(248, 248, 248, 0.73);
-    position: fixed;
-    left: 250px;
-	opacity:0.5;
+    background: #666;
+    left: 0px;
+	opacity:0;
     cursor: no-drop;
     top: 0;
+	z-index:2000;
+	 -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .toggled .sidebar-blind {
 	width: 100%;
+	opacity:0.3;
 }
 
 #page-content-wrapper {
     width: 100%;
     position: absolute;
     padding: 0px;
+	padding-top: 60px !important;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -158,6 +164,7 @@ body{ overflow-x:hidden;}
 #navbar-toggle{
 	border-radius: 0px;
 	padding-bottom:5px;
+	border-right: none;
 }
 div#user-name {
     height: auto;
@@ -171,11 +178,10 @@ div#school-name {
     color: white;
 }
 .btn-fab{
-    position:fixed;
+    position:absolute;
 	border-radius: 50%;
 	width: 6rem;
-	z-index: 1000;
-	position: fixed;
+	z-index: 1999;
 	height: 6rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,.5);
 	outline: none !important;
@@ -184,11 +190,15 @@ div#school-name {
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
-.btn-fab.top{ top:2rem;}
-.btn-fab.bottom{bottom:2rem;}
-.btn-fab.left{left:15px;}
-.btn-fab.right{right:15px;}
-#wrapper.toggled .btn-fab.right{ right:-6.6rem;}
+.btn-fab.top{ top:1.5rem;}
+.btn-fab.bottom{bottom:1.5rem;}
+.btn-fab.left{left:3rem;}
+.btn-fab.right{right:3rem;}
+.btn-fab.center{right:47.77%;}
+.btn-fab.fixed{position:fixed;}
+.toggled .btn-fab.top.right{ right:-33%;}
+.toggled .btn-fab.top.left{ left:123%;}
+.toggled .btn-fab.bottom{ bottom:-33%;}
 .pagination-goto{margin:20px 0;}
 .table-data{margin-top:3.33rem;}
 .table-data tr:hover{cursor:pointer;}

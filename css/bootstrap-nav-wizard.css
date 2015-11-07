@@ -6,7 +6,7 @@
   overflow-x: auto;
   white-space: nowrap;
   cursor: all-scroll;
-  padding:0.5rem 0rem;
+  padding:0.666rem 0rem;
 }
 .nav-pills.nav-wizard > li {
   position: relative;
