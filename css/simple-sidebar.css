@@ -174,7 +174,7 @@ div#school-name {
     position:fixed;
 	border-radius: 50%;
 	width: 6rem;
-	z-index: 5;
+	z-index: 1000;
 	position: fixed;
 	height: 6rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,.5);
