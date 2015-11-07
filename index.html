@@ -16,6 +16,8 @@
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/hamburger.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,6 +34,12 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
+			<div class="navbar navbar-default" id="offcanvas-navbar-toggle">
+				<button type="button" class="navbar-toggle c-hamburger c-hamburger--htx"  id="menu-toggle-1" >
+				   <span>toggle menu</span>
+				</button>
+			</div>
+				<div class="sidebar-blind"></div>
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <div id="user-name"> User Name</div>
@@ -77,17 +85,14 @@
 				<li>
                     <a href="#">Module</a>
                 </li>
-				
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
 		<div class="navbar navbar-default" id="navbar-toggle">
-				<button type="button" class="navbar-toggle"  id="menu-toggle" >
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
+				<button type="button" class="navbar-toggle c-hamburger c-hamburger--htx"  id="menu-toggle-1" >
+				   <span>toggle menu</span>
 				</button>
 				<a class="navbar-brand" href="#">Module name</a>
 			</div>
@@ -248,9 +253,12 @@
 
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle,#menu-toggle-1").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+       
+         $("#menu-toggle,#menu-toggle-1").toggleClass("is-active");
+		  $("#wrapper").toggleClass("toggled");
+		
     });
 	$('#sample-data-table tr').click(function(e){
 		$('#exampleModal').modal('show');

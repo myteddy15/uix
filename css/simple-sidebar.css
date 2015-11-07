@@ -8,15 +8,13 @@
 body{ overflow-x:hidden;}
 #wrapper {
     padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
-}
+
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -27,15 +25,30 @@ body{ overflow-x:hidden;}
     margin-left: -250px;
     overflow-y: auto;
     overflow-x: hidden;
-    background: #2B2A2A;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    background: rgb(43, 42, 42);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
+}
+.sidebar-blind {
+    content: " ";
+    display: inline-block;
+    width: 0%;
+    height: 100%;
+    background: rgba(248, 248, 248, 0.73);
+    position: fixed;
+    left: 250px;
+	opacity:0.5;
+    cursor: no-drop;
+    top: 0;
+}
+.toggled .sidebar-blind {
+	width: 100%;
 }
 
 #page-content-wrapper {
@@ -117,7 +130,7 @@ body{ overflow-x:hidden;}
 }
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 0px;
     }
 
     #wrapper.toggled {
@@ -125,11 +138,11 @@ body{ overflow-x:hidden;}
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 0;
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 0;
+        width: 250px;
     }
 
     #page-content-wrapper {
@@ -144,15 +157,16 @@ body{ overflow-x:hidden;}
 }
 #navbar-toggle{
 	border-radius: 0px;
+	padding-bottom:5px;
 }
 div#user-name {
     height: auto;
     line-height: 20px;
-	margin-top:10px;
+	margin-top:16px;
     color: white;
 }
 div#school-name {
-    line-height: 20px;
+    line-height: 22px;
     font-size: 12px;
     color: white;
 }
@@ -165,16 +179,16 @@ div#school-name {
 	height: 6rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,.5);
 	outline: none !important;
-	 -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+	 -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 .btn-fab.top{ top:2rem;}
 .btn-fab.bottom{bottom:2rem;}
 .btn-fab.left{left:15px;}
 .btn-fab.right{right:15px;}
-#wrapper:not(.toggled) .btn-fab.right{ right:-6.6rem;}
+#wrapper.toggled .btn-fab.right{ right:-6.6rem;}
 .pagination-goto{margin:20px 0;}
 .table-data{margin-top:3.33rem;}
 .table-data tr:hover{cursor:pointer;}
@@ -188,25 +202,14 @@ div#school-name {
 	padding-top:2rem;
 	min-height:200px;
 }
-div#sidebar-wrapper:after {
-    content: " ";
-    display: block;
-    width: 0%;
-    height: 100%;
-    background: rgba(248, 248, 248, 0.73);
-    position: fixed;
-    left: 0px;
-	opacity:0.5;
-    cursor: no-drop;
-    top: 50px;
-	 -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.sidebar-brand{
+	padding-left: 60px;
 }
-
-#wrapper:not(.toggled)>div#sidebar-wrapper:after{
-	left: 250px;
-	width: 100%;
-
+#offcanvas-navbar-toggle{
+	position:absolute;
+	background:none;
+	border:none;
+	z-index:10001;
+	padding-top:1px;
+	padding-left:1px;
 }
