@@ -25,7 +25,7 @@ body{ overflow-x:hidden;}
     margin-left: -250px;
     overflow-y: auto;
     overflow-x: hidden;
-    background: rgb(43, 42, 42);
+    background: rgba(43,42,42,0.98);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
