@@ -40,7 +40,7 @@ body{ overflow-x:hidden;}
     display: block;
     width: 0%;
     height: 100%;
-    background: #666;
+    background: #000;
     left: 0px;
 	opacity:0;
     cursor: no-drop;
@@ -53,7 +53,7 @@ body{ overflow-x:hidden;}
 }
 .toggled .sidebar-blind {
 	width: 100%;
-	opacity:0.3;
+	opacity:0.5;
 }
 
 #page-content-wrapper {
@@ -194,10 +194,12 @@ div#school-name {
 .btn-fab.bottom{bottom:1.5rem;}
 .btn-fab.left{left:3rem;}
 .btn-fab.right{right:3rem;}
-.btn-fab.center{right:47.77%;}
+.btn-fab.center{right:46.77%;}
 .btn-fab.fixed{position:fixed;}
 .toggled .btn-fab.top.right{ right:-33%;}
 .toggled .btn-fab.top.left{ left:123%;}
+.toggled .btn-fab.top.right.slide-up{right:3rem;top:-44%;}
+.toggled .btn-fab.top.left.slide-up{left:3rem;top:-44%;}
 .toggled .btn-fab.bottom{ bottom:-33%;}
 .pagination-goto{margin:20px 0;}
 .table-data{margin-top:3.33rem;}
