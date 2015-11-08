@@ -6,12 +6,14 @@
 
 /* Toggle Styles */
 body{ overflow-x:hidden;}
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.3s ease;
+.ease{
+	 -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+#wrapper {
+    padding-left: 0;
 }
 
 
@@ -26,10 +28,6 @@ body{ overflow-x:hidden;}
     overflow-y: auto;
     overflow-x: hidden;
     background: rgba(43,42,42,0.98);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -46,10 +44,6 @@ body{ overflow-x:hidden;}
     cursor: no-drop;
     top: 0;
 	z-index:2000;
-	 -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 .toggled .sidebar-blind {
 	width: 100%;
@@ -57,10 +51,11 @@ body{ overflow-x:hidden;}
 }
 
 #page-content-wrapper {
+	background: rgba(252, 252, 252, 0.666);
     width: 100%;
     position: absolute;
     padding: 0px;
-	padding-top: 60px !important;
+	padding-top: 80px !important;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -177,30 +172,40 @@ div#school-name {
     font-size: 12px;
     color: white;
 }
+.btn{
+	outline: none !important;
+}
+.btn:hover,.btn:active{
+	border: 1px solid rgba(66, 66, 66, 0.333);
+}
 .btn-fab{
     position:absolute;
 	border-radius: 50%;
 	width: 6rem;
 	z-index: 1999;
 	height: 6rem;
-	box-shadow: 0 2px 5px rgba(0,0,0,.5);
-	outline: none !important;
+	box-shadow: 0 3px 2px rgba(0,0,0,.5);
+}
+.btn-fab, .btn-fab span.glyphicon {
 	 -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
+
 .btn-fab.top{ top:1.5rem;}
 .btn-fab.bottom{bottom:1.5rem;}
 .btn-fab.left{left:3rem;}
 .btn-fab.right{right:3rem;}
 .btn-fab.center{right:46.77%;}
 .btn-fab.fixed{position:fixed;}
-.toggled .btn-fab.top.right{ right:-33%;}
-.toggled .btn-fab.top.left{ left:123%;}
-.toggled .btn-fab.top.right.slide-up{right:3rem;top:-44%;}
-.toggled .btn-fab.top.left.slide-up{left:3rem;top:-44%;}
-.toggled .btn-fab.bottom{ bottom:-33%;}
+.toggled .btn-fab{ width:0;height:0;opacity:0;padding:0;}
+.toggled .btn-fab span.glyphicon { font-size:0;opacity:0;}
+.toggled .btn-fab.center{ right:50.77%;}
+.toggled .btn-fab.right{ right:6rem;}
+.toggled .btn-fab.left{ left:6rem;}
+.toggled .btn-fab.top{top:3rem;margin-top:1.5rem;}
+.toggled .btn-fab.bottom{bottom:3rem;margin-bottom:1.5rem;}
 .pagination-goto{margin:20px 0;}
 .table-data{margin-top:3.33rem;}
 .table-data tr:hover{cursor:pointer;}
@@ -224,4 +229,35 @@ div#school-name {
 	z-index:10001;
 	padding-top:1px;
 	padding-left:1px;
+}
+#page-content-wrapper .list-group{
+	box-shadow: 0px 1px 2px rgb(220, 211, 211);
+    border-radius: 3px;
+	background:#fff;
+}
+.list-group-header{
+    z-index: 1;
+    background: #F8F8F8;
+}
+.list-group-canvas {
+    border: 1px solid #ddd;
+    height: 45rem;
+    overflow: hidden;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.list-group-canvas:active,.list-group-canvas:hover{
+	overflow-y: auto;
+}
+
+.list-group-canvas>.list-group-item {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+.list-group-canvas .list-group-item:first-child{
+	border-top:none;
+}
+.list-group-canvas .list-group-item:last-child{
+	border-bottom:none;
 }

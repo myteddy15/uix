@@ -31,10 +31,10 @@
 
 <body>
 
-    <div id="wrapper">
-		<div class="sidebar-blind"></div>
+    <div id="wrapper" class="ease">
+		<div class="sidebar-blind ease"></div>
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" class="ease">
 			<div class="navbar navbar-default" id="offcanvas-navbar-toggle">
 				<button type="button" class="navbar-toggle c-hamburger c-hamburger--htx"  id="menu-toggle-1" >
 				   <span>toggle menu</span>
@@ -99,7 +99,66 @@
 		<button class="btn btn-primary btn-md btn-fab fixed bottom center hide"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>
         <div id="page-content-wrapper" class="animate">
             <div class="container">
-            	<div class="row">
+				<div class="row">
+					<div class="col-md-12">
+						<button class="btn btn-primary btn-fab top right fixed"><span class="glyphicon glyphicon-plus"></span></button>
+						<div class="list-group">
+							<div class="list-group-item list-group-header">
+								<button class="btn btn-xs btn-reverse pull-right"><span class="glyphicon glyphicon-chevron-down"></span></button>
+								<label for="">Inquiries</label>
+							</div>
+							<div class="list-group-canvas">
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">&nbsp;</div>
+							  <div class="list-group-item">
+									<input type="text" class="form-control input-lg" placeholder="Search" />
+							  </div>
+							 </div>
+						</div>
+					</div>
+				</div>
+            	<div class="row"> 
+					<div class="col-md-12">
+						<ul class="nav nav-pills nav-wizard">
+							<li class="active">
+								<a href="#" data-toggle="tab">Prev</a>
+								<div class="nav-arrow"></div>
+							</li>
+							 <li>
+								<div class="nav-wedge"></div>
+								<a href="#" data-toggle="tab">1</a>
+								<div class="nav-arrow"></div>
+							</li>
+							<li>
+								<div class="nav-wedge"></div>
+								<a href="#" data-toggle="tab">2</a>
+								<div class="nav-arrow"></div>
+							</li>
+							<li>
+								<div class="nav-wedge"></div>
+								<a href="#" data-toggle="tab">3</a>
+								<div class="nav-arrow"></div>
+							</li>
+							<li>
+								<div class="nav-wedge"></div>
+								<a href="#" data-toggle="tab">4</a>
+								<div class="nav-arrow"></div>
+							</li>
+							 <li>
+								<div class="nav-wedge"></div>
+								<a href="#" data-toggle="tab">Next</a>
+							</li>
+						 </ul>
+					</div>
+				</div>
+				<div class="row">
             		<div class="col-md-12">
 	            		<ul class="nav nav-pills nav-wizard">
 				        <li class="active">
@@ -111,23 +170,23 @@
 				        	<a href="#" data-toggle="tab"><span class="badge"> 2</span> Contact Information</a>
 				        	<div class="nav-arrow"></div>
 				        </li>
-				        <li><div class="nav-wedge"></div><a href="#" data-toggle="tab">About</a><div class="nav-arrow"></div></li>
-				       <li><div class="nav-wedge"></div><a href="#" data-toggle="tab">About</a><div class="nav-arrow"></div></li>
-				       <li><div class="nav-wedge"></div><a href="#" data-toggle="tab">A very long step</a><div class="nav-arrow"></div></li>
-				       <li><div class="nav-wedge"></div><a href="#" data-toggle="tab">About</a><div class="nav-arrow"></div></li>
-				        <li><div class="nav-wedge"></div><a href="#" data-toggle="tab">Contact</a></li>
+						 <li>
+				         	<div class="nav-wedge"></div>
+				        	<a href="#" data-toggle="tab"><span class="badge"> 3</span> Confirmation</a>
+				        </li>
 				      </ul>
 			      </div>
             	</div>
             	 <div class="row">
             	    	<div class="col-md-6">
-            	    		<button class="btn btn-primary btn-fab top right slide-up "><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
-            	    		<button class="btn btn-primary btn-fab top left slide-up hide"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+							<button class="btn btn-primary btn-fab top right "><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
             	    		<div class="list-group">
-							  <div class="list-group-item">
-							  		<button class="btn btn-xs btn-default"> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
-							  		Basic Information
+							  <div class="list-group-item list-group-header">
+							  		<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+							  		<button class="btn btn-xs btn-warning"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+							  		<label>Basic Information</label>
 							  </div>
+							  <div class="list-group-canvas">
 							  <div class="list-group-item">
 							  	<div class="form-group">
 									<div class="row">
@@ -257,15 +316,35 @@
 									</div>
 							   	</div>
 							  </div>
-								
+							   <div href="#" class="list-group-item">
+								  	<button class="btn btn-xs btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></button>
+									<label>Select One</label>
+								  </div>
+								  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+								  <a href="#" class="list-group-item">Morbi leo risus</a>
+								  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+								  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+								  <a href="#" class="list-group-item">Vestibulum at eros</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <a href="#" class="list-group-item">&nbsp;</a>
+								  <div href="#" class="list-group-item">
+									<input type="text" class="form-control input-lg" placeholder="Search">
+								  </div>
+							  </div>
 							</div>
             	    	</div>
 						<div class="col-md-6">
 							<button class="btn btn-primary btn-fab top right hide"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
 							<div class="list-group"> 
-								<div class="list-group-item"> 
+								
+								<div class="list-group-item list-group-header"> 
+									<button class="btn btn-xs btn-danger hide"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+							  		<button class="btn btn-xs btn-warning hide"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+							  		
 									<label for="">Summary</label>
 								</div>
+								<div class="list-group-canvas">
 								<div class="list-group-item"> 
 									First Name M. Last Name
 								</div>
@@ -289,12 +368,13 @@
 								</div>
 								<div class="list-group-item">&nbsp;
 								</div>
+								</div>
 							</div>
             	    	</div>
 					</div>
 					<div class="row hide">
             	    	<div class="col-md-6">
-            	    		<button class="btn btn-primary btn-fab top right slide-up "><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+            	    		<button class="btn btn-primary btn-fab top right"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
             	    		
 							 <div class="list-group">
 								  <div href="#" class="list-group-item">
