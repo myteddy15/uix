@@ -5,6 +5,10 @@ define(['app','api'], function (app) {
 			$rootScope.__MODULE_NAME = module_name || app.settings.DEFAULT_MODULE_NAME;
 			api.GET('test',function(response){
 				$scope.List = response.data.list;
+			}).onSubmit(function(){
+				console.log('Item submitted');
+			}).onSuccess(function(response){
+				console.log(response);
 			});
 	   }
 	   $scope.openListItem = function(index){
