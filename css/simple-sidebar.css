@@ -236,7 +236,7 @@ div#school-name {
 	background:#fff;
 }
 .list-group-header{
-    z-index: 1;
+    z-index: 3;
     background: #F8F8F8;
 }
 .list-group-canvas {
@@ -255,9 +255,20 @@ div#school-name {
     border-right: none;
     border-radius: 0;
 }
+.list-group-canvas>.list-group-item:hover{
+	cursor:pointer;
+}
 .list-group-canvas .list-group-item:first-child{
 	border-top:none;
 }
 .list-group-canvas .list-group-item:last-child{
 	border-bottom:none;
+}
+.list-group-search-results{
+	 height: 39.5rem;
+	border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.list-group-search-box{
+	border-top:none;
 }
