@@ -22,19 +22,19 @@ function (root,settings,angularAMD) {
 		controllerUrl: "controllers/page_controller"      
 	}))
 	
-	.when("/:section/:tree/:id", angularAMD.route({
+	.when("/:controller/:action", angularAMD.route({
         templateUrl: function (rp) { 
-			return settings.VIEWS_DIRECTORY+'/' + rp.section + '/' + rp.tree +'.'+settings.VIEW_EXTENSION;
+			if(!rp.action)  rp.action ='index';
+			return settings.VIEWS_DIRECTORY+'/' + rp.contoller + '/' + rp.action +'.'+settings.VIEW_EXTENSION;
 		},
         resolve: {
         load: ['$q', '$rootScope', '$location', 
             function ($q, $rootScope, $location) {
                 var path = $location.path();
                 var parsePath = path.split("/");
-                var parentPath = parsePath[1];
-                var controllerName = parsePath[2];
-                var loadController = "controllers/" + parentPath + "/" + 
-                                      controllerName + "Controller";
+                var controllerName = parsePath[1];
+                var loadController = "controllers/"  + 
+                                      controllerName + "_controller";
                                              
                 var deferred = $q.defer();
                 require([loadController], function () {
