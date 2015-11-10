@@ -36,25 +36,16 @@
 								<label for=""> Department</label>
 								<div class="btn-group btn-group-justified">
 								  <div class="btn-group" ng-repeat="department in Departments">
-									<button type="button" class="btn btn-default">{{department.alias}}</button>
+									<button type="button" class="btn btn-default" ng-click="getId(department)">{{department.alias}}</button>
 								  </div>
 								</div>
+								{{educID}}
 							</div>
 							<div class="col-md-6">
 								<label for=""> Level</label>
 								<select name="" id="" class="form-control">
 									<option value="">Select Level</option>
-									<option value="1">Grade 1
-									</option>
-									<option value="2">Grade 2
-									</option>
-									<option value="3">Grade 3
-									</option>
-									<option value="4">Grade 4
-									</option>
-									<option value="5">Grade 5
-									</option>
-									<option value="6">Grade 6
+									<option value="" ng-repeat="yearlevel in YearLevels">{{yearlevel.name | filter: yearlevel.educ_lvl_id===educID}}
 									</option>
 								</select>
 							</div>
