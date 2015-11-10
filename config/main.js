@@ -1,6 +1,6 @@
 require.config({
     baseUrl:'',
-	urlArgs :null,
+	urlArgs :Math.random(),
 	waitSeconds: 60,
     // Alias libraries paths
     paths: {     

@@ -10,11 +10,15 @@ define(['app','api'], function (app) {
 			$scope.ActiveStep=1;
 		};
 		$scope.nextStep = function(){
-			$scope.ActiveStep++;
-			console.log($scope.ActiveStep);
+			if($scope.ActiveStep<$scope.Steps.length){
+				$scope.ActiveStep++;
+			}
 		};
 		$scope.prevStep = function(){
-			$scope.ActiveStep--;
+			if($scope.ActiveStep>1){
+				$scope.ActiveStep--;
+			};
+			
 		};
     }]);
 });

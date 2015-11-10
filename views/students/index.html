@@ -3,8 +3,9 @@
 		<div class="col-md-12">
 			<ul class="nav nav-pills nav-wizard">
 				<li class="" ng-repeat="step in Steps">
-					<a href="#" data-toggle="tab"><span class="badge">{{step.id}}</span> {{step.description}}</a>
-					<div class="nav-arrow"></div>
+					<div ng-if="!$first" class="nav-wedge"></div>
+					<a data-toggle="tab"><span class="badge">{{step.id}}</span> {{step.description}}</a>
+					<div ng-if="!$last" class="nav-arrow"></div>
 				</li>
 			</ul>
 		</div>
@@ -161,6 +162,8 @@
 				</div>
 				<div class="list-group" ng-show="ActiveStep===2">
 					<div class="list-group-item list-group-header">
+						<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 						<label for="">Contact Information</label>
 					</div>
 					<div class="list-group-canvas">
@@ -168,6 +171,8 @@
 				</div>
 				<div class="list-group" ng-show="ActiveStep===3">
 					<div class="list-group-item list-group-header">
+						<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 						<label for="">Confirmation</label>
 					</div>
 					<div class="list-group-canvas">
