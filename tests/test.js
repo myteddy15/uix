@@ -1,25 +1,24 @@
 "use strict";
-define([],function(){
-	return {
-		GET:{
-			success:{
+define(['model'],function($model){
+	return new $model(
+			{
 				meta:{
-					title: 'Test'
+					title: 'Test title',
 				},
-				data:{
-					list: [
-						{title:'List group item heading 1',description:'One Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-						{title:'List group item heading 2',description:'Two Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-						{title:'List group item heading 3',description:'Three Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-						{title:'List group item heading 4',description:'Four Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-						{title:'List group item heading 5',description:'Five Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-						{title:'List group item heading 6',description:'Six Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.'},
-					],
-				}
-			},
-			error:{
-				test: 'Error',
+				data:[
+					{id:1,title:'Sample',description:'Sample description'},
+					{id:2,title:'Sample 2',description:'Sample  second description'},
+				]
 			}
+		);
+		//test.setMeta({title:'Test'});
+		//test.setData([{title:'Sample','description':'dasd'}]);
+		/*
+		test.GET = function(){
+			return {success:test.list()};
 		}
-	}
+		test.POST = function(data){
+			return {success:test.save(data)};
+		}
+		*/
 });

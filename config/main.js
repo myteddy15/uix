@@ -7,6 +7,7 @@ require.config({
         'app': 'config/app',
         'settings': 'config/settings',
         'routes': 'config/routes',
+        'model': 'config/model',
         'angular': 'bower_components/angular/angular.min',
         'angularAMD': 'bower_components/angularAMD/angularAMD.min',
 		'angular-route': 'bower_components/angular-route/angular-route.min',
