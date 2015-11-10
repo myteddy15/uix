@@ -2,6 +2,12 @@
 define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.init = function(){
+			$scope.Departments=[];
+			api.GET('educ_levels',function success(response){
+				console.log(response.data);
+				$scope.Departments=response.data;
+			});
+			$scope.Student = {};
 			$scope.Steps = [
 				{id:1, description:"Basic Information"},
 				{id:2, description:"Contact Information"},
@@ -13,6 +19,7 @@ define(['app','api'], function (app) {
 			if($scope.ActiveStep<$scope.Steps.length){
 				$scope.ActiveStep++;
 			}
+			
 		};
 		$scope.prevStep = function(){
 			if($scope.ActiveStep>1){
