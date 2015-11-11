@@ -32,7 +32,7 @@ define(['app','api'], function (app) {
 		};
 		$scope.getId = function(department){
 			$scope.educID=department.id;
-			console.log($scope.educID);
+			//console.log($scope.educID);
 		};
     }]);
 });

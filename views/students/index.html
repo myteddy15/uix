@@ -36,7 +36,7 @@
 								<label for=""> Department</label>
 								<div class="btn-group btn-group-justified">
 								  <div class="btn-group" ng-repeat="department in Departments">
-									<button type="button" class="btn btn-default" ng-click="getId(department)">{{department.alias}}</button>
+									<button type="button" class="btn btn-default"  ng-class="{active: department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
 								  </div>
 								</div>
 								{{educID}}
@@ -45,7 +45,7 @@
 								<label for=""> Level</label>
 								<select name="" id="" class="form-control">
 									<option value="">Select Level</option>
-									<option value="" ng-repeat="yearlevel in YearLevels">{{yearlevel.name | filter: yearlevel.educ_lvl_id===educID}}
+									<option value="" ng-repeat="yearlevel in YearLevels">{{yearlevel.name | filter: educ_lvl_id===educID}}
 									</option>
 								</select>
 							</div>
@@ -108,17 +108,7 @@
 								<label for=""> Religion</label>
 								<select name="" id="" class="form-control">
 									<option value="">Select Level</option>
-									<option value="1">Grade 1
-									</option>
-									<option value="2">Grade 2
-									</option>
-									<option value="3">Grade 3
-									</option>
-									<option value="4">Grade 4
-									</option>
-									<option value="5">Grade 5
-									</option>
-									<option value="6">Grade 6
+									<option value="1">Roman Catholic
 									</option>
 								</select>
 							</div>
@@ -126,17 +116,7 @@
 								<label for=""> Citizenship</label>
 								<select name="" id="" class="form-control">
 									<option value="">Select Level</option>
-									<option value="1">Grade 1
-									</option>
-									<option value="2">Grade 2
-									</option>
-									<option value="3">Grade 3
-									</option>
-									<option value="4">Grade 4
-									</option>
-									<option value="5">Grade 5
-									</option>
-									<option value="6">Grade 6
+									<option value="1">Filipino
 									</option>
 								</select>
 							</div>
@@ -151,8 +131,121 @@
 						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 						<label for="">Contact Information</label>
 					</div>
-					<div class="list-group-canvas">
-					</div>
+						<div class="list-group-canvas">
+							<div class="list-group-item">
+								<div class="list-group">
+									<div class="list-group-item list-group-header">
+										<label for="">Contact Number</label>
+									</div>
+									<div class="list-group-canvas">
+										<div class="list-group-item">
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="">Landline</label>
+														<input type="text" class="form-control" placeholder="Landline Number"/>
+													</div>
+													<div class="col-md-6">
+														<label for="">Mobile</label>
+														<input type="text" class="form-control" placeholder="Mobile Number"/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list-group">
+									<div class="list-group-item list-group-header">
+										<label for="">Current Address</label>
+									</div>
+									<div class="list-group-canvas">
+										<div class="list-group-item">
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="">Country</label>
+														<select name="" id="" class="form-control">
+															<option value="Ph">Philppines</option>
+														</select>
+													</div>
+													<div class="col-md-6">
+														<label for="">Province</label>
+														<select name="" id="" class="form-control">
+															<option value="Btg">Batangas</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="">City</label>
+														<input type="text" class="form-control" placeholder="City"/>
+													</div>
+													<div class="col-md-6">
+														<label for="">Barangay</label>
+														<input type="text" class="form-control" placeholder="Province"/>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-12">
+														<label for="">Address</label>
+														<input type="text" class="form-control" placeholder="Address"/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list-group">
+									<div class="list-group-item list-group-header">
+										<label for="">Home Address</label>
+									</div>
+									<div class="list-group-canvas">
+										<div class="list-group-item">
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="">Country</label>
+														<select name="" id="" class="form-control">
+															<option value="Ph">Philppines</option>
+														</select>
+													</div>
+													<div class="col-md-6">
+														<label for="">Province</label>
+														<select name="" id="" class="form-control">
+															<option value="Btg">Batangas</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="">City</label>
+														<input type="text" class="form-control" placeholder="City"/>
+													</div>
+													<div class="col-md-6">
+														<label for="">Barangay</label>
+														<input type="text" class="form-control" placeholder="Province"/>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-12">
+														<label for="">Address</label>
+														<input type="text" class="form-control" placeholder="Address"/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 				</div>
 				<div class="list-group" ng-show="ActiveStep===3">
 					<div class="list-group-item list-group-header">
