@@ -2,13 +2,12 @@
 define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.init = function(){
-			$scope.Students={};
+			$scope.Student={};
 			$scope.Departments=[];
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
 				$scope.Departments=response.data;	
 			});
-			$scope.Student = {};
 			$scope.Steps = [
 				{id:1, description:"Basic Information"},
 				{id:2, description:"Contact Information"},
@@ -71,23 +70,23 @@ define(['app','api'], function (app) {
 		};
 		
 		$scope.basicInfo=function(){
-			$scope.Students.educ_level_id=$scope.educID;
-			$scope.Students.year_level_id=$scope.level;
-			$scope.Students.first_name=$scope.firstName;
-			$scope.Students.middle_name=$scope.middleName;
-			$scope.Students.last_name=$scope.lastName;
-			$scope.Students.suffix_name=$scope.suffix;
-			$scope.Students.gender=$scope.gender;
-			$scope.Students.birthday=$scope.birthday;
-			$scope.Students.religion=$scope.religion;
-			$scope.Students.citizenship=$scope.citizenship;
+			$scope.Student.educ_level_id=$scope.educID;
+			$scope.Student.year_level_id=$scope.level;
+			$scope.Student.first_name=$scope.firstName;
+			$scope.Student.middle_name=$scope.middleName;
+			$scope.Student.last_name=$scope.lastName;
+			$scope.Student.suffix_name=$scope.suffix;
+			$scope.Student.gender=$scope.gender;
+			$scope.Student.birthday=$scope.birthday;
+			$scope.Student.religion=$scope.religion;
+			$scope.Student.citizenship=$scope.citizenship;
 		};
 		$scope.contactInfo=function(){
-			$scope.Students.contact_numbers=[];
+			$scope.Student.contact_numbers=[];
 			var landline = {type:'landline', number:$scope.landline};
 			var mobile = {type:'mobile', number:$scope.mobile};
-			$scope.Students.contact_numbers.push(landline);
-			$scope.Students.contact_numbers.push(mobile);
+			$scope.Student.contact_numbers.push(landline);
+			$scope.Student.contact_numbers.push(mobile);
 			var current = {	type:'current',
 							country:$scope.currentCountry,
 							province:$scope.currentProvince,
@@ -102,9 +101,9 @@ define(['app','api'], function (app) {
 							barangay:$scope.homeBrgy,
 							address:$scope.homeAddrs,
 							};
-			$scope.Students.addressess=[];
-			$scope.Students.addressess.push(current);
-			$scope.Students.addressess.push(permanent);
+			$scope.Student.addressess=[];
+			$scope.Student.addressess.push(current);
+			$scope.Student.addressess.push(permanent);
 		};
     }]);
 });
