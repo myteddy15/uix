@@ -7,7 +7,7 @@ define(['model'],function($model){
 				},
 				data:[
 					{
-					  "id":"S201512345"
+					  "id":"S201512345",
 					  "educ_level_id": "GS",
 					  "year_level_id": "G1",
 					  "first_name": "Juan",
