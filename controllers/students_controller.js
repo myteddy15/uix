@@ -19,6 +19,21 @@ define(['app','api'], function (app) {
 				console.log(response.data);
 				$scope.YearLevels = response.data;
 			});
+			$scope.Countries=[];
+			api.GET('countries',function success(response){
+				console.log(response.data);
+				$scope.Countries = response.data;
+			});
+			$scope.Provinces=[];
+			api.GET('provinces',function success(response){
+				console.log(response.data);
+				$scope.Provinces = response.data;
+			});
+			$scope.Cities=[];
+			api.GET('cities',function success(response){
+				console.log(response.data);
+				$scope.Cities = response.data;
+			});
 		};
 		
 		$scope.nextStep = function(){

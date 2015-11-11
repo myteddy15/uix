@@ -33,8 +33,10 @@
 											</div>
 											<div class="col-md-6">
 												<label for="">Year Level</label>
-												<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-12">
 														<span ng-if="Student.year_level_id" ng-repeat="yearlevel in YearLevels | filter:{id: Student.year_level_id}">{{yearlevel.name}}</span>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -76,7 +78,7 @@
 									<div class="col-md-12">
 										<label for="">Current Address</label>
 										<address ng-repeat="address in Student.addressess | filter: {type:'current'}">
-											{{address.address}}, {{address.barangay}}<br/>
+											{{address.address}}, {{address.barangay}},<br/>
 											{{address.city}}, {{address.province}}, {{address.country}}<br/>
 										</address>
 									</div>
@@ -85,7 +87,7 @@
 									<div class="col-md-12">
 										<label for="">Home Address</label>
 										<address ng-repeat="address in Student.addressess | filter: {type:'permanent'}">
-											{{address.address}}, {{address.barangay}}<br/>
+											{{address.address}}, {{address.barangay}},<br/>
 											{{address.city}}, {{address.province}}, {{address.country}}<br/>
 										</address>
 									</div>
@@ -233,13 +235,15 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="currentCountry">
-												<option value="PH">Philppines</option>
+												<option value="">Select Level</option>
+												<option ng-value="countries.id" ng-repeat="countries in Countries">{{countries.name}}</option>
 											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="currentProvince">
-												<option value="BTG">Batangas</option>
+												<option value="">Select Level</option>
+												<option ng-value="provinces.id" ng-repeat="provinces in Provinces | filter:{ country_id: currentCountry}">{{provinces.name}}</option>
 											</select>
 										</div>
 									</div>
@@ -248,11 +252,14 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label for="">City</label>
-											<input type="text" class="form-control" placeholder="City" ng-model="currentCity"/>
+											<select name="" id="" class="form-control" ng-model="currentCity">
+												<option value="">Select Level</option>
+												<option ng-value="cities.name" ng-repeat="cities in Cities | filter:{province_id: currentProvince}">{{cities.name}}</option>
+											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Barangay</label>
-											<input type="text" class="form-control" placeholder="Province" ng-model="currentBrgy"/>
+											<input type="text" class="form-control" placeholder="Barangay" ng-model="currentBrgy"/>
 										</div>
 									</div>
 								</div>
@@ -274,13 +281,15 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="homeCountry">
-												<option value="PH">Philppines</option>
+												<option value="">Select Level</option>
+												<option ng-value="countries.id" ng-repeat="countries in Countries">{{countries.name}}</option>
 											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="homeProvince">
-												<option value="BTG">Batangas</option>
+												<option value="">Select Level</option>
+												<option ng-value="provinces.id" ng-repeat="provinces in Provinces | filter: {country_id: homeCountry}">{{provinces.name}}</option>
 											</select>
 										</div>
 									</div>
@@ -289,7 +298,10 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label for="">City</label>
-											<input type="text" class="form-control" placeholder="City" ng-model="homeCity"/>
+											<select name="" id="" class="form-control" ng-model="homeCity">
+												<option value="">Select Level</option>
+												<option ng-value="cities.name" ng-repeat="cities in Cities | filter:{province_id: homeProvince}">{{cities.name}}</option>
+											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Barangay</label>
