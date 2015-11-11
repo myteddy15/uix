@@ -20,6 +20,7 @@ define(['app','api'], function (app) {
 				$scope.YearLevels = response.data;
 			});
 		};
+		
 		$scope.nextStep = function(){
 			if($scope.ActiveStep===1){
 				$scope.basicInfo();
@@ -30,7 +31,6 @@ define(['app','api'], function (app) {
 			if($scope.ActiveStep<$scope.Steps.length){
 				$scope.ActiveStep++;
 			}
-			
 		};
 		$scope.prevStep = function(){
 			if($scope.ActiveStep>1){
@@ -41,34 +41,12 @@ define(['app','api'], function (app) {
 			$scope.educID=department.id;
 			//console.log($scope.educID);
 		};
-		$scope.level;
-		$scope.firstName;
-		$scope.middleName;
-		$scope.lastName;
-		$scope.suffix;
-		$scope.birthday;
-		$scope.suffix;
-		$scope.birthPlace;
-		$scope.religion;
-		$scope.citizenship;
-		$scope.gender;
-		$scope.landline;
-		$scope.mobile;
-		$scope.currentCountry;
-		$scope.currentProvince;
-		$scope.currentCity;
-		
-		
-		$scope.homeCountry;
-		$scope.homeProvince;
-		$scope.homeCity;
-		$scope.homeBrgy;
-		$scope.homeAddrs;
-		
 		$scope.getGender=function(gender){
 			$scope.gender = gender;
 		};
-		
+		$scope.updateStep=function(step){
+			$scope.ActiveStep = step.id;
+		};
 		$scope.basicInfo=function(){
 			$scope.Student.educ_level_id=$scope.educID;
 			$scope.Student.year_level_id=$scope.level;
@@ -78,6 +56,7 @@ define(['app','api'], function (app) {
 			$scope.Student.suffix_name=$scope.suffix;
 			$scope.Student.gender=$scope.gender;
 			$scope.Student.birthday=$scope.birthday;
+			$scope.Student.birthplace=$scope.birthPlace;
 			$scope.Student.religion=$scope.religion;
 			$scope.Student.citizenship=$scope.citizenship;
 		};
@@ -104,6 +83,33 @@ define(['app','api'], function (app) {
 			$scope.Student.addressess=[];
 			$scope.Student.addressess.push(current);
 			$scope.Student.addressess.push(permanent);
+		};
+		$scope.clearField=function(){
+			$scope.educID = null;
+			$scope.level = null;
+			$scope.firstName = null;
+			$scope.middleName = null;
+			$scope.lastName = null;
+			$scope.suffix = null;
+			$scope.gender = null;
+			$scope.birthday = null;
+			$scope.birthPlace = null;
+			$scope.religion = null;
+			$scope.citizenship = null;
+		};
+		$scope.clearField2=function(){
+			$scope.landline = null;
+			$scope.mobile = null;
+			$scope.currentCountry = null;
+			$scope.currentProvince = null;
+			$scope.currentCity = null;
+			$scope.currentBrgy = null;
+			$scope.currentAddrs = null;
+			$scope.homeCountry = null;
+			$scope.homeProvince = null;
+			$scope.homeCity = null;
+			$scope.homeBrgy = null;
+			$scope.homeAddrs = null;
 		};
     }]);
 });
