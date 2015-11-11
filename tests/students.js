@@ -16,6 +16,7 @@ define(['model'],function($model){
 					  "suffix_name": "Jr",
 					  "gender": "M",
 					  "birthday": "1990-01-01",
+					  "birthplace": "Malvar",
 					  "religion": "Roman Catholic",
 					  "citizenship": "Filipino",
 					  "contact_numbers": [

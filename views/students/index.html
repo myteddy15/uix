@@ -18,7 +18,68 @@
 				</div>
 				<div class="list-group-canvas">
 					<div class="list-group-item">
-						<pre>{{Student |json	}}</pre>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="list-group-item">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="">Student</label>
+												<div class="row">
+													<div class="col-md-12">
+														<span>{{Student.first_name}} {{Student.middle_name}} {{Student.last_name}} {{Student.suffix_name}}</span>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<label for="">Year Level</label>
+												<div class="col-md-12">
+														<span ng-if="Student.year_level_id" ng-repeat="yearlevel in YearLevels | filter:{id: Student.year_level_id}">{{yearlevel.name}}</span>
+												</div>
+											</div>
+										</div>
+									</div>	
+								</div>
+								<div class="list-group-item list-group-header">
+									<label for="">Basic Info</label>
+								</div>
+								<div class="form-group">
+									<div class="list-group-item">
+										<dl class="dl-horizontal">
+											<dt>Gender</dt>
+											<dd>{{Student.gender}}</dd>
+											<dt>Birthday</dt>
+											<dd>{{Student.birthday}}</dd>
+											<dt>Birth Place</dt>
+											<dd>{{Student.birthplace}}</dd>
+											<dt>Religion</dt>
+											<dd>{{Student.religion}}</dd>
+											<dt>Citizenship</dt>
+											<dd>{{Student.citizenship}}</dd>
+										</dl>
+									</div>
+								</div>
+								<div class="list-group-item list-group-header">
+									<label for="">Contact Info</label>
+								</div>
+								<div class="form-group">
+									<div class="list-group-item">
+										<dl class="dl-horizontal">
+											<dt>Landline</dt>
+											<dd>{{Student.landline}}</dd>
+											<dt>Mobile</dt>
+											<dd>{{Student.mobile}}</dd>
+											<dt>Birth Place</dt>
+											<dd>{{Student.birthPlace}}</dd>
+											<dt>Religion</dt>
+											<dd>{{Student.religion}}</dd>
+											<dt>Citizenship</dt>
+											<dd>{{Student.citizenship}}</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,7 +103,6 @@
 									<button type="button" class="btn btn-default"  ng-class="{active: department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
 								  </div>
 								</div>
-								{{educID}}
 							</div>
 							<div class="col-md-6">
 								<label for=""> Level</label>
@@ -51,7 +111,6 @@
 									<option value="{{yearlevel.id}}" ng-repeat="yearlevel in YearLevels | filter:{ educ_level_id: educID}">{{yearlevel.name}}
 									</option>
 								</select>
-								{{level}}
 							</div>
 						</div>
 					</div>
@@ -59,11 +118,11 @@
 						<div class="row">
 							<div class="col-md-6">
 								<label for="">First Name</label>
-								<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">{{firstName}}
+								<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">
 							</div>
 							<div class="col-md-6">
 								<label for="">Middle Name</label>
-								<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">{{middleName}}
+								<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">
 							</div>
 						</div>
 					</div>
@@ -71,11 +130,11 @@
 						<div class="row">
 							<div class="col-md-6">
 								<label for="">Last Name</label>
-								<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">{{lastName}}
+								<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">
 							</div>
 							<div class="col-md-6">
 								<label for="">Suffix</label>
-								<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">{{suffix}}
+								<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">
 							</div>
 						</div>
 					</div>
@@ -91,11 +150,10 @@
 									<button type="button" class="btn btn-default" ng-click="getGender('F')">Female</button>
 								  </div>
 								</div>
-								{{gender}}
 							</div>
 							<div class="col-md-6">
 								<label for=""> Birthday</label>
-								<input type="text" class="form-control" placeholder="mm/dd/yyy" ng-model="birthday"/>{{birthday}}
+								<input type="text" class="form-control" placeholder="mm/dd/yyy" ng-model="birthday"/>
 							</div>
 						</div>
 					</div>
@@ -103,7 +161,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<label for=""> Birth Place</label>
-								<input type="text" class="form-control" placeholder="Address" ng-model="birthPlace"/>{{birthPlace}}
+								<input type="text" class="form-control" placeholder="Address" ng-model="birthPlace"/>
 							</div>
 						</div>
 					</div>
@@ -116,7 +174,6 @@
 									<option value="RC">Roman Catholic
 									</option>
 								</select>
-								{{religion}}
 							</div>
 							<div class="col-md-6">
 								<label for=""> Citizenship</label>
@@ -125,7 +182,6 @@
 									<option value="Fil">Filipino
 									</option>
 								</select>
-								{{citizenship}}
 							</div>
 						</div>
 					</div>
@@ -147,11 +203,11 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label for="">Landline</label>
-										<input type="text" class="form-control" placeholder="Landline Number" ng-model="landline"/>{{landline}}
+										<input type="text" class="form-control" placeholder="Landline Number" ng-model="landline"/>
 									</div>
 									<div class="col-md-6">
 										<label for="">Mobile</label>
-										<input type="text" class="form-control" placeholder="Mobile Number" ng-model="mobile"/>{{mobile}}
+										<input type="text" class="form-control" placeholder="Mobile Number" ng-model="mobile"/>
 									</div>
 								</div>
 							</div>	
@@ -167,14 +223,12 @@
 											<select name="" id="" class="form-control" ng-model="currentCountry">
 												<option value="Ph">Philppines</option>
 											</select>
-											{{currentCountry}}
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="currentProvince">
 												<option value="BTG">Batangas</option>
 											</select>
-											{{currentProvince}}
 										</div>
 									</div>
 								</div>
@@ -182,11 +236,11 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label for="">City</label>
-											<input type="text" class="form-control" placeholder="City" ng-model="currentCity"/>{{currentCity}}
+											<input type="text" class="form-control" placeholder="City" ng-model="currentCity"/>
 										</div>
 										<div class="col-md-6">
 											<label for="">Barangay</label>
-											<input type="text" class="form-control" placeholder="Province" ng-model="currentBrgy"/>{{currentBrgy}}
+											<input type="text" class="form-control" placeholder="Province" ng-model="currentBrgy"/>
 										</div>
 									</div>
 								</div>
@@ -194,7 +248,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label for="">Address</label>
-											<input type="text" class="form-control" placeholder="Address" ng-model="currentAddrs"/>{{currentAddrs}}
+											<input type="text" class="form-control" placeholder="Address" ng-model="currentAddrs"/>
 										</div>
 									</div>
 								</div>
@@ -210,14 +264,12 @@
 											<select name="" id="" class="form-control" ng-model="homeCountry">
 												<option value="Ph">Philppines</option>
 											</select>
-											{{homeCountry}}
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="homeProvince">
 												<option value="BTG">Batangas</option>
 											</select>
-											{{homeProvince}}
 										</div>
 									</div>
 								</div>
@@ -225,11 +277,11 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label for="">City</label>
-											<input type="text" class="form-control" placeholder="City" ng-model="homeCity"/>{{homeCity}}
+											<input type="text" class="form-control" placeholder="City" ng-model="homeCity"/>
 										</div>
 										<div class="col-md-6">
 											<label for="">Barangay</label>
-											<input type="text" class="form-control" placeholder="Province" ng-model="homeBrgy"/>{{homeBrgy}}
+											<input type="text" class="form-control" placeholder="Province" ng-model="homeBrgy"/>
 										</div>
 									</div>
 								</div>
@@ -237,7 +289,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label for="">Address</label>
-											<input type="text" class="form-control" placeholder="Address" ng-model="homeAddrs"/>{{homeAddrs}}
+											<input type="text" class="form-control" placeholder="Address" ng-model="homeAddrs"/>
 										</div>
 									</div>
 								</div>
@@ -252,7 +304,7 @@
 					</div>
 					<div class="list-group-canvas">
 						<div class="list-group-item">
-							
+							<pre>{{Student |json	}}</pre>
 						</div>
 					</div>
 				</div>

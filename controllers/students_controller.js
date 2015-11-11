@@ -78,6 +78,7 @@ define(['app','api'], function (app) {
 			$scope.Student.suffix_name=$scope.suffix;
 			$scope.Student.gender=$scope.gender;
 			$scope.Student.birthday=$scope.birthday;
+			$scope.Student.birthplace=$scope.birthPlace;
 			$scope.Student.religion=$scope.religion;
 			$scope.Student.citizenship=$scope.citizenship;
 		};
