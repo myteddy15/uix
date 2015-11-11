@@ -34,6 +34,59 @@ define(['app','api'], function (app) {
 			$scope.educID=department.id;
 			//console.log($scope.educID);
 		};
+		$scope.department;
+		$scope.level;
+		$scope.firstName;
+		$scope.middleName;
+		$scope.lastName;
+		$scope.suffix;
+		$scope.birthday;
+		$scope.suffix;
+		$scope.birthPlace;
+		$scope.religion;
+		$scope.citizenship;
+		$scope.male;
+		$scope.female;
+		$scope.landline;
+		$scope.mobile;
+		$scope.currentCountry;
+		$scope.currentProvince;
+		$scope.currentCity;
+		$scope.currentBrgy;
+		$scope.currentAddrs;
+		$scope.homeCountry;
+		$scope.homeProvince;
+		$scope.homeCity;
+		$scope.homeBrgy;
+		$scope.homeAddrs;
+		
+		console.log(
+		$scope.department,
+		$scope.level,
+		$scope.firstName,
+		$scope.middleName,
+		$scope.lastName,
+		$scope.suffix,
+		$scope.birthday,
+		$scope.suffix,
+		$scope.birthPlace,
+		$scope.religion,
+		$scope.citizenship,
+		$scope.male,
+		$scope.female,
+		$scope.landline,
+		$scope.mobile,
+		$scope.currentCountry,
+		$scope.currentProvince,
+		$scope.currentCity,
+		$scope.currentBrgy,
+		$scope.currentAddrs,
+		$scope.homeCountry,
+		$scope.homeProvince,
+		$scope.homeCity,
+		$scope.homeBrgy,
+		$scope.homeAddrs
+		);
     }]);
 });
 

@@ -2,7 +2,7 @@ define(function() {
   return {
 	DEMO_MODE: true,
 	VIEWS_DIRECTORY: 'views',
-	VIEW_EXTENSION: 'html',
+	VIEW_EXTENSION: 'html?'+ Math.random(),
 	APP_TRANSITION_DELAY: 0,
 	FAB_TRANSITION_DELAY: 333,
 	DEFAULT_MODULE_NAME: 'Module',
