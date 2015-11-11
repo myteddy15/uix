@@ -2,6 +2,7 @@
 define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.init = function(){
+			$scope.Students={};
 			$scope.Departments=[];
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
@@ -21,9 +22,16 @@ define(['app','api'], function (app) {
 			});
 		};
 		$scope.nextStep = function(){
+			if($scope.ActiveStep===1){
+				$scope.basicInfo();
+			}
+			if($scope.ActiveStep===2){
+				$scope.contactInfo();
+			}
 			if($scope.ActiveStep<$scope.Steps.length){
 				$scope.ActiveStep++;
 			}
+			
 		};
 		$scope.prevStep = function(){
 			if($scope.ActiveStep>1){
@@ -44,8 +52,7 @@ define(['app','api'], function (app) {
 		$scope.birthPlace;
 		$scope.religion;
 		$scope.citizenship;
-		//$scope.male;
-		//$scope.female;
+		$scope.gender;
 		$scope.landline;
 		$scope.mobile;
 		$scope.currentCountry;
@@ -59,23 +66,29 @@ define(['app','api'], function (app) {
 		$scope.homeBrgy;
 		$scope.homeAddrs;
 		
-		$scope.Students={};
-		$scope.pushInfo=function(){
-			$scope.Students={
-			educ_level_id:$scope.educID,
-			year_level_id:$scope.level,
-			first_name:$scope.firstName,
-			middle_name:$scope.middleName,
-			last_name:$scope.lastName,
-			suffix_name:$scope.suffix,
-			//gender:
-			//birthday:
-			religion:$scope.religion,
-			
-			};
-			console.log($scope.Students);
+		$scope.getGender=function(gender){
+			$scope.gender = gender;
 		};
 		
+		$scope.basicInfo=function(){
+			$scope.Students.educ_level_id=$scope.educID;
+			$scope.Students.year_level_id=$scope.level;
+			$scope.Students.first_name=$scope.firstName;
+			$scope.Students.middle_name=$scope.middleName;
+			$scope.Students.last_name=$scope.lastName;
+			$scope.Students.suffix_name=$scope.suffix;
+			$scope.Students.gender=$scope.gender;
+			$scope.Students.birthday=$scope.birthday;
+			$scope.Students.religion=$scope.religion;
+			$scope.Students.citizenship=$scope.citizenship;
+		};
+		$scope.contactInfo=function(){
+			$scope.Students.contact_numbers=[];
+			var landline = {type:'landline', number:$scope.landline};
+			var mobile = {type:'mobile', number:$scope.mobile};
+			$scope.Students.contact_numbers.push(landline);
+			$scope.Students.contact_numbers.push(mobile);
+		};
     }]);
 });
 
