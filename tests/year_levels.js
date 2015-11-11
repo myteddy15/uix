@@ -40,6 +40,12 @@ define(['model'],function($model){
 						"id": "G3",
 						"educ_level_id": "GS",
 						"name": "Grade 3",
+						"alias": "G3"
+					  },
+					  {
+						"id": "G4",
+						"educ_level_id": "GS",
+						"name": "Grade 4",
 						"alias": "G4"
 					  },
 					  {

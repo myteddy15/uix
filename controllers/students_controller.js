@@ -34,7 +34,6 @@ define(['app','api'], function (app) {
 			$scope.educID=department.id;
 			//console.log($scope.educID);
 		};
-		$scope.department;
 		$scope.level;
 		$scope.firstName;
 		$scope.middleName;
@@ -45,8 +44,8 @@ define(['app','api'], function (app) {
 		$scope.birthPlace;
 		$scope.religion;
 		$scope.citizenship;
-		$scope.male;
-		$scope.female;
+		//$scope.male;
+		//$scope.female;
 		$scope.landline;
 		$scope.mobile;
 		$scope.currentCountry;
@@ -60,33 +59,23 @@ define(['app','api'], function (app) {
 		$scope.homeBrgy;
 		$scope.homeAddrs;
 		
-		console.log(
-		$scope.department,
-		$scope.level,
-		$scope.firstName,
-		$scope.middleName,
-		$scope.lastName,
-		$scope.suffix,
-		$scope.birthday,
-		$scope.suffix,
-		$scope.birthPlace,
-		$scope.religion,
-		$scope.citizenship,
-		$scope.male,
-		$scope.female,
-		$scope.landline,
-		$scope.mobile,
-		$scope.currentCountry,
-		$scope.currentProvince,
-		$scope.currentCity,
-		$scope.currentBrgy,
-		$scope.currentAddrs,
-		$scope.homeCountry,
-		$scope.homeProvince,
-		$scope.homeCity,
-		$scope.homeBrgy,
-		$scope.homeAddrs
-		);
+		$scope.Students={};
+		$scope.pushInfo=function(){
+			$scope.Students={
+			educ_level_id:$scope.educID,
+			year_level_id:$scope.level,
+			first_name:$scope.firstName,
+			middle_name:$scope.middleName,
+			last_name:$scope.lastName,
+			suffix_name:$scope.suffix,
+			//gender:
+			//birthday:
+			religion:$scope.religion,
+			
+			};
+			console.log($scope.Students);
+		};
+		
     }]);
 });
 
