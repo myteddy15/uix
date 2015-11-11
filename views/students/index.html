@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-pills nav-wizard">
-				<li ng-class="{active:ActiveStep===step.id}" ng-repeat="step in Steps">
+				<li ng-class="{active:ActiveStep===step.id}" ng-repeat="step in Steps" ng-click="updateStep(step)">
 					<div ng-if="!$first" class="nav-wedge"></div>
 					<a data-toggle="tab"><span class="badge">{{step.id}}</span> {{step.description}}</a>
 					<div ng-if="!$last" class="nav-arrow"></div>
@@ -66,16 +66,32 @@
 									<div class="list-group-item">
 										<dl class="dl-horizontal">
 											<dt>Landline</dt>
-											<dd>{{Student.landline}}</dd>
+											<dd>{{}}</dd>
 											<dt>Mobile</dt>
-											<dd>{{Student.mobile}}</dd>
-											<dt>Birth Place</dt>
-											<dd>{{Student.birthPlace}}</dd>
-											<dt>Religion</dt>
-											<dd>{{Student.religion}}</dd>
-											<dt>Citizenship</dt>
-											<dd>{{Student.citizenship}}</dd>
+											<dd>{{}}</dd>
 										</dl>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<label for="">Current Address</label>
+										<address>
+											<strong>Twitter, Inc.</strong><br>
+											1355 Market Street, Suite 900<br>
+											San Francisco, CA 94103<br>
+											<abbr title="Phone">P:</abbr> (123) 456-7890
+										</address>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<label for="">Home Address</label>
+										<address>
+											<strong>Twitter, Inc.</strong><br>
+											1355 Market Street, Suite 900<br>
+											San Francisco, CA 94103<br>
+											<abbr title="Phone">P:</abbr> (123) 456-7890
+										</address>
 									</div>
 								</div>
 							</div>
@@ -88,7 +104,7 @@
 				<button class="btn btn-primary btn-fab top right " ng-click="nextStep()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
 				<div class="list-group" ng-show="ActiveStep===1">
 				  <div class="list-group-item list-group-header">
-						<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+						<button class="btn btn-xs btn-danger" ng-click="clearField()"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 						<label>Basic Information</label>
 				  </div>
@@ -100,7 +116,7 @@
 								<label for=""> Department</label>
 								<div class="btn-group btn-group-justified">
 								  <div class="btn-group" ng-repeat="department in Departments" ng-model="department">
-									<button type="button" class="btn btn-default"  ng-class="{active: department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
+									<button type="button" class="btn btn-default  ng-class:{'btn-primary': department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
 								  </div>
 								</div>
 							</div>
@@ -144,10 +160,10 @@
 								<label for=""> Gender</label>
 								<div class="btn-group btn-group-justified">
 								  <div class="btn-group">
-									<button type="button" class="btn btn-default" ng-click="getGender('M')">Male</button>
+									<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('M')}" ng-click="getGender('M')">Male</button>
 								  </div>
 								  <div class="btn-group">
-									<button type="button" class="btn btn-default" ng-click="getGender('F')">Female</button>
+									<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('F')}" ng-click="getGender('F')">Female</button>
 								  </div>
 								</div>
 							</div>
@@ -190,7 +206,7 @@
 				</div>
 				<div class="list-group" ng-show="ActiveStep===2">
 					<div class="list-group-item list-group-header">
-						<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+						<button class="btn btn-xs btn-danger" ng-click="clearField2()"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 						<label for="">Contact Information</label>
 					</div>
