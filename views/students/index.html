@@ -66,31 +66,27 @@
 									<div class="list-group-item">
 										<dl class="dl-horizontal">
 											<dt>Landline</dt>
-											<dd>{{}}</dd>
+											<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'landline'}">{{contact_number.number}}</dd>
 											<dt>Mobile</dt>
-											<dd>{{}}</dd>
+											<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'mobile'}">{{contact_number.number}}</dd>
 										</dl>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<label for="">Current Address</label>
-										<address>
-											<strong>Twitter, Inc.</strong><br>
-											1355 Market Street, Suite 900<br>
-											San Francisco, CA 94103<br>
-											<abbr title="Phone">P:</abbr> (123) 456-7890
+										<address ng-repeat="address in Student.addressess | filter: {type:'current'}">
+											{{address.address}}, {{address.barangay}}<br/>
+											{{address.city}}, {{address.province}}, {{address.country}}<br/>
 										</address>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<label for="">Home Address</label>
-										<address>
-											<strong>Twitter, Inc.</strong><br>
-											1355 Market Street, Suite 900<br>
-											San Francisco, CA 94103<br>
-											<abbr title="Phone">P:</abbr> (123) 456-7890
+										<address ng-repeat="address in Student.addressess | filter: {type:'permanent'}">
+											{{address.address}}, {{address.barangay}}<br/>
+											{{address.city}}, {{address.province}}, {{address.country}}<br/>
 										</address>
 									</div>
 								</div>
@@ -237,7 +233,7 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="currentCountry">
-												<option value="Ph">Philppines</option>
+												<option value="PH">Philppines</option>
 											</select>
 										</div>
 										<div class="col-md-6">
@@ -278,7 +274,7 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="homeCountry">
-												<option value="Ph">Philppines</option>
+												<option value="PH">Philppines</option>
 											</select>
 										</div>
 										<div class="col-md-6">
