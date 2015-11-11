@@ -58,8 +58,8 @@ define(['app','api'], function (app) {
 		$scope.currentCountry;
 		$scope.currentProvince;
 		$scope.currentCity;
-		$scope.currentBrgy;
-		$scope.currentAddrs;
+		
+		
 		$scope.homeCountry;
 		$scope.homeProvince;
 		$scope.homeCity;
@@ -88,6 +88,23 @@ define(['app','api'], function (app) {
 			var mobile = {type:'mobile', number:$scope.mobile};
 			$scope.Students.contact_numbers.push(landline);
 			$scope.Students.contact_numbers.push(mobile);
+			var current = {	type:'current',
+							country:$scope.currentCountry,
+							province:$scope.currentProvince,
+							city:$scope.currentCity,
+							barangay:$scope.currentBrgy,
+							address:$scope.currentAddrs,
+							};
+			var permanent = {type:'permanent',
+							country:$scope.homeCountry,
+							province:$scope.homeProvince,
+							city:$scope.homeCity,
+							barangay:$scope.homeBrgy,
+							address:$scope.homeAddrs,
+							};
+			$scope.Students.addressess=[];
+			$scope.Students.addressess.push(current);
+			$scope.Students.addressess.push(permanent);
 		};
     }]);
 });
