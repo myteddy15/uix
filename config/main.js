@@ -1,6 +1,6 @@
 require.config({
     baseUrl:'',
-	urlArgs :null,
+	urlArgs :(function(){for(var s = Math.random()+'',c = 0x123456,i=0;i<s.length;i++)c += (s.charCodeAt(i)*(i + 1));return c;}()),
 	waitSeconds: 60,
     // Alias libraries paths
     paths: {     
