@@ -56,10 +56,10 @@
 								<dd>{{Student.citizenship}}</dd>
 						</dl>
 					</div>
-					<div class="list-group-item list-group-header">
-						<h4>Contact Information</h4>
+					<div class="list-group-item list-group-header" ng-show="hasContactInfo">
+						<h5>Contact Information</h5>
 					</div>
-					<div class="list-group-item">
+					<div class="list-group-item" ng-show="hasContactInfo">
 						<dl class="dl-horizontal">
 							<dt>Landline</dt>
 							<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'landline'}">{{contact_number.number}}</dd>
