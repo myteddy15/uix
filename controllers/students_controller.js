@@ -138,11 +138,15 @@ define(['app','api'], function (app) {
 			};
 		};
 		$scope.init=function(){
-			$scope.Students={};
+			$scope.Students=[];
 			api.GET('students',function success(response){
 				console.log(response.data);
 				$scope.Students=response.data;	
 			});
+			$scope.openStudentInfo=function(student){
+				$scope.Student=student;
+				console.log(student);
+			};
 		};
     }]);
 });
