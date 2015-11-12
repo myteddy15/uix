@@ -3,6 +3,8 @@ define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.init = function(){
 			$scope.Student={};
+			$scope.hasBasicInfo=false;
+			$scope.hasContactInfo=false;
 			$scope.Departments=[];
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
@@ -18,6 +20,21 @@ define(['app','api'], function (app) {
 			api.GET('year_levels',function success(response){
 				console.log(response.data);
 				$scope.YearLevels = response.data;
+			});
+			$scope.Countries=[];
+			api.GET('countries',function success(response){
+				console.log(response.data);
+				$scope.Countries = response.data;
+			});
+			$scope.Provinces=[];
+			api.GET('provinces',function success(response){
+				console.log(response.data);
+				$scope.Provinces = response.data;
+			});
+			$scope.Cities=[];
+			api.GET('cities',function success(response){
+				console.log(response.data);
+				$scope.Cities = response.data;
 			});
 		};
 		
@@ -59,6 +76,7 @@ define(['app','api'], function (app) {
 			$scope.Student.birthplace=$scope.birthPlace;
 			$scope.Student.religion=$scope.religion;
 			$scope.Student.citizenship=$scope.citizenship;
+			$scope.hasBasicInfo = true;
 		};
 		$scope.contactInfo=function(){
 			$scope.Student.contact_numbers=[];
@@ -83,6 +101,7 @@ define(['app','api'], function (app) {
 			$scope.Student.addressess=[];
 			$scope.Student.addressess.push(current);
 			$scope.Student.addressess.push(permanent);
+			$scope.hasContactInfo = true;
 		};
 		$scope.clearField=function(){
 			$scope.educID = null;
