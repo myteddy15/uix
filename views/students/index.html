@@ -18,82 +18,68 @@
 				</div>
 				<div class="list-group-canvas">
 					<div class="list-group-item">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="list-group-item">
-									<div class="form-group">
-										<div class="row">
-											<div class="col-md-6">
-												<label for="">Student</label>
-												<div class="row">
-													<div class="col-md-12">
-														<span>{{Student.first_name}} {{Student.middle_name}} {{Student.last_name}} {{Student.suffix_name}}</span>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<label for="">Year Level</label>
-												<div class="row">
-													<div class="col-md-12">
-														<span ng-if="Student.year_level_id" ng-repeat="yearlevel in YearLevels | filter:{id: Student.year_level_id}">{{yearlevel.name}}</span>
-													</div>
-												</div>
-											</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="">Student</label>
+									<div class="row">
+										<div class="col-md-12">
+											<span>{{Student.first_name}} {{Student.middle_name}} {{Student.last_name}} {{Student.suffix_name}}</span>
 										</div>
-									</div>	
-								</div>
-								<div class="list-group-item list-group-header">
-									<label for="">Basic Info</label>
-								</div>
-								<div class="form-group">
-									<div class="list-group-item">
-										<dl class="dl-horizontal">
-											<dt>Gender</dt>
-											<dd>{{Student.gender}}</dd>
-											<dt>Birthday</dt>
-											<dd>{{Student.birthday}}</dd>
-											<dt>Birth Place</dt>
-											<dd>{{Student.birthplace}}</dd>
-											<dt>Religion</dt>
-											<dd>{{Student.religion}}</dd>
-											<dt>Citizenship</dt>
-											<dd>{{Student.citizenship}}</dd>
-										</dl>
 									</div>
 								</div>
-								<div class="list-group-item list-group-header">
-									<label for="">Contact Info</label>
-								</div>
-								<div class="form-group">
-									<div class="list-group-item">
-										<dl class="dl-horizontal">
-											<dt>Landline</dt>
-											<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'landline'}">{{contact_number.number}}</dd>
-											<dt>Mobile</dt>
-											<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'mobile'}">{{contact_number.number}}</dd>
-										</dl>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label for="">Current Address</label>
-										<address ng-repeat="address in Student.addressess | filter: {type:'current'}">
-											{{address.address}}, {{address.barangay}},<br/>
-											{{address.city}}, {{address.province}}, {{address.country}}<br/>
-										</address>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label for="">Home Address</label>
-										<address ng-repeat="address in Student.addressess | filter: {type:'permanent'}">
-											{{address.address}}, {{address.barangay}},<br/>
-											{{address.city}}, {{address.province}}, {{address.country}}<br/>
-										</address>
+								<div class="col-md-6">
+									<label for="">Year Level</label>
+									<div class="row">
+										<div class="col-md-12">
+											<span ng-if="Student.year_level_id" ng-repeat="yearlevel in YearLevels | filter:{id: Student.year_level_id}">{{yearlevel.name}}</span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="list-group-item list-group-header">
+						<h4>Basic Information</h4>
+					</div>
+					<div class="list-group-item">
+						<dl class="dl-horizontal">
+								<dt>Gender</dt>
+								<dd>{{Student.gender}}</dd>
+								<dt>Birthday</dt>
+								<dd>{{Student.birthday}}</dd>
+								<dt>Birth Place</dt>
+								<dd>{{Student.birthplace}}</dd>
+								<dt>Religion</dt>
+								<dd>{{Student.religion}}</dd>
+								<dt>Citizenship</dt>
+								<dd>{{Student.citizenship}}</dd>
+						</dl>
+					</div>
+					<div class="list-group-item list-group-header">
+						<h4>Contact Information</h4>
+					</div>
+					<div class="list-group-item">
+						<dl class="dl-horizontal">
+							<dt>Landline</dt>
+							<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'landline'}">{{contact_number.number}}</dd>
+							<dt>Mobile</dt>
+							<dd ng-repeat="contact_number in Student.contact_numbers | filter: {type:'mobile'}">{{contact_number.number}}</dd>
+							<dt>Current Address</dt>
+							<dd>
+								<address ng-repeat="address in Student.addressess | filter: {type:'current'}">
+									{{address.address}}, {{address.barangay}},<br/>
+									{{address.city}}, {{address.province}}, {{address.country}}<br/>
+								</address>
+							</dd>
+							<dt>Home Address</dt>
+							<dd>
+								<address ng-repeat="address in Student.addressess | filter: {type:'permanent'}">
+									{{address.address}}, {{address.barangay}},<br/>
+									{{address.city}}, {{address.province}}, {{address.country}}<br/>
+								</address>
+							</dd>
+						</dl>
 					</div>
 				</div>
 			</div>
@@ -128,74 +114,89 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6">
-								<label for="">First Name</label>
-								<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">
-							</div>
-							<div class="col-md-6">
-								<label for="">Middle Name</label>
-								<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">
-							</div>
-						</div>
+					<div class="list-group-item list-group-header">
+						<h4>Name</h4>
 					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6">
-								<label for="">Last Name</label>
-								<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">
-							</div>
-							<div class="col-md-6">
-								<label for="">Suffix</label>
-								<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6">
-								<label for=""> Gender</label>
-								<div class="btn-group btn-group-justified">
-								  <div class="btn-group">
-									<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('M')}" ng-click="getGender('M')">Male</button>
-								  </div>
-								  <div class="btn-group">
-									<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('F')}" ng-click="getGender('F')">Female</button>
-								  </div>
+						<div class="list-group-item">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="">First Name</label>
+										<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">
+									</div>
+									<div class="col-md-6">
+										<label for="">Middle Name</label>
+										<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<label for=""> Birthday</label>
-								<input type="text" class="form-control" placeholder="mm/dd/yyy" ng-model="birthday"/>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="">Last Name</label>
+										<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">
+									</div>
+									<div class="col-md-6">
+										<label for="">Suffix</label>
+										<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">
+									</div>
+								</div>
+							</div>
+						</div>
+					<div class="list-group-item list-group-header">
+						<h4>Biological</h4>
+					</div>
+					<div class="list-group-item">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for=""> Gender</label>
+									<div class="btn-group btn-group-justified">
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('M')}" ng-click="getGender('M')">Male</button>
+									  </div>
+									  <div class="btn-group">
+										<button type="button" class="btn btn-default ng-class:{'btn-primary': gender===('F')}" ng-click="getGender('F')">Female</button>
+									  </div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label for=""> Birthday</label>
+									<input type="text" class="form-control" placeholder="mm/dd/yyy" ng-model="birthday"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-12">
+									<label for=""> Birth Place</label>
+									<input type="text" class="form-control" placeholder="Address" ng-model="birthPlace"/>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-12">
-								<label for=""> Birth Place</label>
-								<input type="text" class="form-control" placeholder="Address" ng-model="birthPlace"/>
-							</div>
-						</div>
+					<div class="list-group-item list-group-header">
+						<h4>Social</h4>
 					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6">
-								<label for=""> Religion</label>
-								<select name="" id="" class="form-control" ng-model="religion">
-									<option value="">Select Level</option>
-									<option value="RC">Roman Catholic
-									</option>
-								</select>
-							</div>
-							<div class="col-md-6">
-								<label for=""> Citizenship</label>
-								<select name="" id="" class="form-control" ng-model="citizenship">
-									<option value="">Select Level</option>
-									<option value="Fil">Filipino
-									</option>
-								</select>
+					<div class="list-group-item">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for=""> Religion</label>
+									<select name="" id="" class="form-control" ng-model="religion">
+										<option value="">Select Level</option>
+										<option value="RC">Roman Catholic
+										</option>
+									</select>
+								</div>
+								<div class="col-md-6">
+									<label for=""> Citizenship</label>
+									<select name="" id="" class="form-control" ng-model="citizenship">
+										<option value="">Select Level</option>
+										<option value="Fil">Filipino
+										</option>
+									</select>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -235,15 +236,15 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="currentCountry">
-												<option value="">Select Level</option>
+												<option value="">Select Country</option>
 												<option ng-value="countries.id" ng-repeat="countries in Countries">{{countries.name}}</option>
 											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="currentProvince">
-												<option value="">Select Level</option>
-												<option ng-value="provinces.id" ng-repeat="provinces in Provinces | filter:{ country_id: currentCountry}">{{provinces.name}}</option>
+												<option value="">Select Province</option>
+												<option ng-value="provinces.id" ng-repeat="provinces in Provinces | filter:{ country_id: currentCountry}" ng-if="currentCountry">{{provinces.name}}</option>
 											</select>
 										</div>
 									</div>
@@ -253,8 +254,8 @@
 										<div class="col-md-6">
 											<label for="">City</label>
 											<select name="" id="" class="form-control" ng-model="currentCity">
-												<option value="">Select Level</option>
-												<option ng-value="cities.name" ng-repeat="cities in Cities | filter:{province_id: currentProvince}">{{cities.name}}</option>
+												<option value="">Select City</option>
+												<option ng-value="cities.name" ng-repeat="cities in Cities | filter:{province_id: currentProvince}" ng-if="currentProvince">{{cities.name}}</option>
 											</select>
 										</div>
 										<div class="col-md-6">
