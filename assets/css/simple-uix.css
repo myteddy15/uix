@@ -51,7 +51,7 @@ body{ overflow-x:hidden;}
 }
 
 #page-content-wrapper {
-	background: rgba(252, 252, 252, 0.666);
+	background: #f8f8f8;
     width: 100%;
 	min-height:100%;
     position: absolute;
@@ -157,8 +157,9 @@ body{ overflow-x:hidden;}
 }
 #navbar-toggle{
 	border-radius: 0px;
-	padding-bottom:5px;
+	padding-bottom:0px;
 	border-right: none;
+	background:#fff;
 }
 div#user-name {
     height: auto;
@@ -171,6 +172,11 @@ div#school-name {
     font-size: 12px;
     color: white;
 }
+.form-control{
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 .btn{
 	outline: none !important;
 }
@@ -234,9 +240,17 @@ div#school-name {
     border-radius: 3px;
 	background:#fff;
 }
+.list-group label, .list-group dt{
+	font-size: 1.24rem;
+}
 .list-group-header{
     z-index: 3;
-    background: #F8F8F8;
+    background: #f9f9f9;
+}
+.list-group>.list-group-item.list-group-header>label{
+	font-weight: bold;
+    font-size: 1.43rem;
+    color: #777777;
 }
 .list-group-canvas {
     border: 1px solid #ddd;
@@ -307,7 +321,7 @@ div#school-name {
 }
 .nav-pills.nav-wizard > li a {
   border-radius: 0;
-  background-color: #eee;
+  background-color: #FFF;
 }
 .nav-pills.nav-wizard > li .nav-arrow {
   position: absolute;
@@ -317,7 +331,7 @@ div#school-name {
   height: 0px;
   border-style: solid;
   border-width: 20px 0 20px 20px;
-  border-color: transparent transparent transparent #eee;
+  border-color: transparent transparent transparent #FFF;
   z-index: 150;
 }
 .nav-pills.nav-wizard > li .nav-wedge {
@@ -328,7 +342,7 @@ div#school-name {
   height: 0px;
   border-style: solid;
   border-width: 20px 0 20px 20px;
-  border-color: #eee #eee #eee transparent;
+  border-color: #FFF #FFF #FFF transparent;
   z-index: 150;
 }
 .nav-pills.nav-wizard > li:hover .nav-arrow {
@@ -497,4 +511,30 @@ div#school-name {
 .c-hamburger--htra.is-active span::after {
   bottom: 0;
   transform: translateX(-8px) translateY(-4px) rotate(45deg);
+}
+.loader {
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #F8F8F8;
+}
+.loader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #428BCA;
+  animation: loading 1.23s ease infinite;
+}
+
+@keyframes loading {
+    from {left: -200px; width: 30%; opacity:1;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%; opacity:0;}
 }

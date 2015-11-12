@@ -3,7 +3,7 @@ define(function() {
 	DEMO_MODE: true,
 	VIEWS_DIRECTORY: 'views',
 	VIEW_EXTENSION: 'html?'+ Math.random(),
-	APP_TRANSITION_DELAY: 0,
+	APP_TRANSITION_DELAY: 111,
 	FAB_TRANSITION_DELAY: 333,
 	DEFAULT_MODULE_NAME: 'Module',
 	TEST_DELAY: 500,
