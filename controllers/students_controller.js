@@ -137,15 +137,29 @@ define(['app','api'], function (app) {
 				$scope.homeAddrs = null;
 			};
 		};
-		$scope.init=function(){
+		$scope.list=function(){
+			$scope.YearLevels=[];
 			$scope.Students=[];
+			$scope.hasInformation = false;
+			$scope.hasNoInformation = true;
+			api.GET('year_levels',function success(response){
+				console.log(response.data);
+				$scope.YearLevels = response.data;	
+			});
 			api.GET('students',function success(response){
 				console.log(response.data);
 				$scope.Students=response.data;	
 			});
 			$scope.openStudentInfo=function(student){
 				$scope.Student=student;
+				$scope.hasInformation = true;
+				$scope.hasNoInformation = false;
 				console.log(student);
+			};
+			$scope.removeStudentInfo = function(){
+				$scope.hasInformation = false;
+				$scope.hasNoInformation = true;
+				$scope.Student = null;
 			};
 		};
     }]);
