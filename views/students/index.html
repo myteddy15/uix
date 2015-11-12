@@ -12,7 +12,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="list-group">
+			<div class="list-group" ng-show="hasNoI">
 				<div class="list-group-item list-group-header">
 					<label for="">Summary</label>
 				</div>
@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<div class="list-group-item list-group-header">
-						<h4>Basic Information</h4>
+						<h5>Basic Information</h5>
 					</div>
 					<div class="list-group-item">
 						<dl class="dl-horizontal">
@@ -105,58 +105,59 @@
 						<label>Basic Information</label>
 				  </div>
 				  <div class="list-group-canvas">
-				  <div class="list-group-item">
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6">
-								<label for=""> Department</label>
-								<div class="btn-group btn-group-justified">
-								  <div class="btn-group" ng-repeat="department in Departments" ng-model="department">
-									<button type="button" class="btn btn-default  ng-class:{'btn-primary': department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
-								  </div>
+					<div class="list-group-item">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for=""> Department</label>
+									<div class="btn-group btn-group-justified">
+									  <div class="btn-group" ng-repeat="department in Departments" ng-model="department">
+										<button type="button" class="btn btn-default  ng-class:{'btn-primary': department.id===educID}" ng-click="getId(department)">{{department.alias}}</button>
+									  </div>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<label for=""> Level</label>
-								<select name="" id="" class="form-control"  ng-model="level">
-									<option value="">Select Level</option>
-									<option value="{{yearlevel.id}}" ng-repeat="yearlevel in YearLevels | filter:{ educ_level_id: educID}">{{yearlevel.name}}
-									</option>
-								</select>
+								<div class="col-md-6">
+									<label for=""> Level</label>
+									<select name="" id="" class="form-control"  ng-model="level">
+										<option value="">Select Level</option>
+										<option value="{{yearlevel.id}}" ng-repeat="yearlevel in YearLevels | filter:{ educ_level_id: educID}">{{yearlevel.name}}
+										</option>
+									</select>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="list-group-item list-group-header">
-						<h4>Name</h4>
+						<h5>Name</h5>
 					</div>
-						<div class="list-group-item">
-							<div class="form-group">
-								<div class="row">
-									<div class="col-md-6">
-										<label for="">First Name</label>
-										<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">
-									</div>
-									<div class="col-md-6">
-										<label for="">Middle Name</label>
-										<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-md-6">
-										<label for="">Last Name</label>
-										<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">
-									</div>
-									<div class="col-md-6">
-										<label for="">Suffix</label>
-										<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">
+					<div class="list-group-item">
+						<div class="form-group">
+									<div class="row">
+										<div class="col-md-6">
+											<label for="">First Name</label>
+											<input type="text" class="form-control" placeholder="Given name" ng-model="firstName">
+										</div>
+										<div class="col-md-6">
+											<label for="">Middle Name</label>
+											<input type="text" class="form-control" placeholder="Middle name" ng-model="middleName">
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-6">
+											<label for="">Last Name</label>
+											<input type="text" class="form-control" placeholder="Family name" ng-model="lastName">
+										</div>
+										<div class="col-md-6">
+											<label for="">Suffix</label>
+											<input type="text" class="form-control" placeholder="Jr., III" ng-model="suffix">
+										</div>
+									</div>
+								</div>
+					</div>
 					<div class="list-group-item list-group-header">
-						<h4>Biological</h4>
+						<h5>Biological</h5>
 					</div>
 					<div class="list-group-item">
 						<div class="form-group">
@@ -188,7 +189,7 @@
 						</div>
 					</div>
 					<div class="list-group-item list-group-header">
-						<h4>Social</h4>
+						<h5>Social</h5>
 					</div>
 					<div class="list-group-item">
 						<div class="form-group">
@@ -212,8 +213,7 @@
 							</div>
 						</div>
 					</div>
-				</div>	 
-			</div>
+				</div>
 				</div>
 				<div class="list-group" ng-show="ActiveStep===2">
 					<div class="list-group-item list-group-header">
@@ -223,7 +223,7 @@
 					</div>
 						<div class="list-group-canvas">
 							<div class="list-group-item list-group-header">
-									<label for="">Contact Number</label>
+								<h5>Contact Number</h5>
 							</div>
 							<div class="list-group-item">
 							<div class="form-group">
@@ -240,7 +240,7 @@
 							</div>	
 							</div>
 							<div class="list-group-item list-group-header">
-									<label for="">Current Address</label>
+								<h5>Current Address</h5>
 							</div>
 							<div class="list-group-item">
 								<div class="form-group">
@@ -286,7 +286,7 @@
 								</div>
 							</div>
 							<div class="list-group-item list-group-header">
-									<label for="">Home Address</label>
+								<h5>Home Address</h5>
 							</div>
 							<div class="list-group-item">
 								<div class="form-group">
@@ -345,7 +345,6 @@
 						</div>
 					</div>
 				</div>
-				
 		</div>
 	</div>
 </div>
