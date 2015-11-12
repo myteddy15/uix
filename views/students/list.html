@@ -24,7 +24,7 @@
 				</div>
 				<div class="list-group-canvas list-group-search-results" >
 					<div class="list-group-item" ng-repeat="student in Students" ng-click="openStudentInfo(student)">
-						<h4 class="list-group-item-heading">{{student.first_name}} {{student.middle_name}} {{student.last_name}} {{students.suffix_name}}</h4>
+						<h4 class="list-group-item-heading">{{student.first_name}} {{student.middle_name}} {{student.last_name}} {{student.suffix_name}}</h4>
 						<p class="list-group-item-text">{{student.id}} | <span ng-repeat="yearlevel in YearLevels | filter:{id: student.year_level_id}" >{{yearlevel.name}}</span></p>
 					</div>
 				</div>
@@ -82,8 +82,13 @@
 					<div class="list-group-item list-group-header" ng-show="hasInformation">
 						<h5>Basic Information</h5>
 					</div>
+					
 					<div class="list-group-item" ng-show="hasInformation">
 						<dl class="dl-horizontal">
+								<dt>Name</dt>
+								<dd>{{Student.first_name}} {{Student.middle_name}} {{Student.last_name}} {{Student.suffix_name}}</dd>
+								<dt>Year Level</dt>
+								<dd>{{Student.year_level_id}}</dd>
 								<dt>Gender</dt>
 								<dd>{{Student.gender}}</dd>
 								<dt>Birthday</dt>
@@ -109,14 +114,14 @@
 							<dd>
 								<address ng-repeat="address in Student.addressess | filter: {type:'current'}">
 									{{address.address}}, {{address.barangay}},<br/>
-									{{address.city}}, {{address.province}}, {{address.country}}<br/>
+									{{address.city}}, <span ng-repeat="province in Provinces | filter: {id: address.province}">{{province.name}}</span>, <span ng-repeat="country in Countries | filter: {id: address.country}">{{country.name}}</span><br/>
 								</address>
 							</dd>
 							<dt>Home Address</dt>
 							<dd>
 								<address ng-repeat="address in Student.addressess | filter: {type:'permanent'}">
 									{{address.address}}, {{address.barangay}},<br/>
-									{{address.city}}, {{address.province}}, {{address.country}}<br/>
+									{{address.city}}, <span ng-repeat="province in Provinces | filter: {id: address.province}">{{province.name}}</span>, <span ng-repeat="country in Countries | filter: {id: address.country}">{{country.name}}</span><br/>
 								</address>
 							</dd>
 						</dl>

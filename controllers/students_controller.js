@@ -2,10 +2,13 @@
 define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.index = function(){
+			//wrap this in init function
 			$scope.Student={};
 			$scope.hasBasicInfo=false;
 			$scope.hasContactInfo=false;
 			$scope.Departments=[];
+			$scope.ActiveStep=1;
+			//
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
 				$scope.Departments=response.data;	
@@ -15,7 +18,6 @@ define(['app','api'], function (app) {
 				{id:2, description:"Contact Information"},
 				{id:3, description:"Confirmation"}
 			];
-			$scope.ActiveStep=1;
 			$scope.YearLevels=[];
 			api.GET('year_levels',function success(response){
 				console.log(response.data);
@@ -107,6 +109,9 @@ define(['app','api'], function (app) {
 			$scope.sendInfo = function(){
 				api.POST('students',$scope.Student,function success(response){
 				console.log(response.data);
+				//reset student info and step
+				//call init
+				//clearField clearField2
 			});
 			};
 			$scope.clearField=function(){
@@ -140,6 +145,8 @@ define(['app','api'], function (app) {
 		$scope.list=function(){
 			$scope.YearLevels=[];
 			$scope.Students=[];
+			$scope.Countries=[];
+			$scope.Provinces=[];
 			$scope.hasInformation = false;
 			$scope.hasNoInformation = true;
 			api.GET('year_levels',function success(response){
@@ -161,6 +168,14 @@ define(['app','api'], function (app) {
 				$scope.hasNoInformation = true;
 				$scope.Student = null;
 			};
+			api.GET('countries',function success(response){
+				console.log(response.data);
+				$scope.Countries = response.data;	
+			});
+			api.GET('provinces',function success(response){
+				console.log(response.data);
+				$scope.Provinces=response.data;	
+			});
 		};
     }]);
 });
