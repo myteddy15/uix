@@ -1,0 +1,74 @@
+<div ng-controller="StudentController" ng-init="init()">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="list-group">
+				<div class="list-group-item list-group-header">
+					<div class="btn-group btn-group-sm pull-right" uib-dropdown>
+						<button class="btn btn-default disabled">1 - 5 of 10</button>
+						<button class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+						<button class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+						
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" uib-dropdown-toggle>
+							<span class="glyphicon glyphicon-chevron-down"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#/">Sort</a></li>
+							<li><a href="#/">Filter</a></li>
+							<li><a href="#/">Go to Page</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#/">Some other link</a></li>
+							
+						  </ul>
+					</div>
+					<label class="clear-fix">List</label>
+				</div>
+				<div class="list-group-canvas list-group-search-results" >
+					<div class="list-group-item" ng-repeat="students in StudentSample">
+						<h4 class="list-group-item-heading">{{students.first_name}} {{students.middle_name}} {{students.last_name}} {{students.suffix_name}}</h4>
+						<p class="list-group-item-text">{{students.educ_level_id}} | {{students.year_level_id}}</p>
+					</div>
+				</div>
+				<div class="list-group-item list-group-search-box">
+					<div class="input-group"> 
+						<div class="input-group-btn"><button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
+						<input type="text" class="form-control" placeholder="Search" />
+						<div class="input-group-btn"><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="list-group">
+				<div class="list-group-item list-group-header">
+					<button class="btn btn-xs btn-danger" ng-click="closeListItem()"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+					<label>{{ActiveListItem? ActiveListItem.title:'List group item'}}</label>
+					<div class="btn-group btn-group-sm pull-right" uib-dropdown>
+						  <button class="btn btn-default dropdown-toggle" type="button"  uib-dropdown-toggle>
+							<span class="glyphicon glyphicon-chevron-down"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#/">Edit</a></li>
+							<li><a href="#/">Delete</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#/">Some other link</a></li>
+							
+						  </ul>
+					</div>
+				</div>
+				<div class="list-group-canvas">
+					<div class="list-group-item">
+						<div class="form-group">
+							<label for="">Content</label>
+							<p class="form-control-static" ng-if="ActiveListItem">
+								{{ActiveListItem.description}}
+							</p>
+							<p class="form-control-static" ng-if="!ActiveListItem">
+								No item selected
+							</p>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</div>

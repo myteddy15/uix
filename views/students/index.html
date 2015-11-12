@@ -1,4 +1,4 @@
-<div ng-controller="StudentController" ng-init="init()">
+<div ng-controller="StudentController" ng-init="index()">
 	<div class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-pills nav-wizard">
@@ -296,14 +296,14 @@
 										<div class="col-md-6">
 											<label for="">Country</label>
 											<select name="" id="" class="form-control" ng-model="homeCountry">
-												<option value="">Select Level</option>
+												<option value="">Select Country</option>
 												<option ng-value="countries.id" ng-repeat="countries in Countries">{{countries.name}}</option>
 											</select>
 										</div>
 										<div class="col-md-6">
 											<label for="">Province</label>
 											<select name="" id="" class="form-control" ng-model="homeProvince">
-												<option value="">Select Level</option>
+												<option value="">Select Province</option>
 												<option ng-value="provinces.id" ng-repeat="provinces in Provinces | filter: {country_id: homeCountry}">{{provinces.name}}</option>
 											</select>
 										</div>
@@ -314,7 +314,7 @@
 										<div class="col-md-6">
 											<label for="">City</label>
 											<select name="" id="" class="form-control" ng-model="homeCity">
-												<option value="">Select Level</option>
+												<option value="">Select City</option>
 												<option ng-value="cities.name" ng-repeat="cities in Cities | filter:{province_id: homeProvince}">{{cities.name}}</option>
 											</select>
 										</div>
