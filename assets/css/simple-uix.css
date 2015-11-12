@@ -285,7 +285,17 @@ div#school-name {
 .list-group-search-box{
 	border-top:none;
 }
-
+.list-group-item.list-group-header>h5{
+	font-size: 1.23rem;
+    text-transform: uppercase;
+    color: #777;
+}
+.list-group .well{
+	text-align: center;
+    color: #777;
+    font-size: 1.23rem;
+    height: 100%;
+}
 .nav-pills.nav-wizard{
   display: block;
   width: 96%;
