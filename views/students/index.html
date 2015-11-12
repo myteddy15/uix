@@ -12,7 +12,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="list-group" ng-show="hasNoI">
+			<div class="list-group" ng-show="hasBasicInfo || hasContactInfo">
 				<div class="list-group-item list-group-header">
 					<label for="">Summary</label>
 				</div>
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="list-group">
+			<div class="list-group" ng-hide="hasBasicInfo || hasContactInfo">
 				<div class="list-group-item list-group-header">
 					<label for="">Summary</label>
 				</div>
@@ -97,7 +97,9 @@
 			</div>
 		</div>
 		<div class="col-md-6">
-				<button class="btn btn-primary btn-fab top right " ng-click="nextStep()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+				<button class="btn btn-primary btn-fab top right" ng-click="nextStep()">
+				<span class="glyphicon " ng-class="{'glyphicon-chevron-right':ActiveStep!=3,'glyphicon-ok': ActiveStep===3}" aria-hidden="true"></span>
+				</button>
 				<div class="list-group" ng-show="ActiveStep===1">
 				  <div class="list-group-item list-group-header">
 						<button class="btn btn-xs btn-danger" ng-click="clearField()"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
@@ -336,12 +338,15 @@
 				<div class="list-group" ng-show="ActiveStep===3">
 					<div class="list-group-item list-group-header">
 						<button class="btn btn-xs btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+						<button class="btn btn-xs btn-warning" ng-click="prevStep()"> <span class="glyphicon glyphicon-left" aria-hidden="true"></span></button>
 						<label for="">Confirmation</label>
 					</div>
 					<div class="list-group-canvas">
 						<div class="list-group-item">
-							<pre>{{Student |json	}}</pre>
+							<div class="form-group">
+								<h5>Enter Confirmation Code</h5>
+								<input type="text" class="form-control" placeholder="See Code in the Summary" />
+							</div>
 						</div>
 					</div>
 				</div>
