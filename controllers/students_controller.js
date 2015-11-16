@@ -6,10 +6,10 @@ define(['app','api'], function (app) {
 			$scope.Student={};
 			$scope.hasBasicInfo=false;
 			$scope.hasContactInfo=false;
-			$scope.Departments=[];
 			$scope.ActiveStep=1;
 			};
 			$scope.init();
+			$scope.Departments=[];
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
 				$scope.Departments=response.data;	
@@ -113,7 +113,6 @@ define(['app','api'], function (app) {
 				$scope.init();
 				$scope.clearField();
 				$scope.clearField2();
-				$scope.ActiveStep=1;
 				//reset student info and step
 				//call init
 				//clearField clearField2

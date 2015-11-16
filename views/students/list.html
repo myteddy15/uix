@@ -25,7 +25,7 @@
 				<div class="list-group-canvas list-group-search-results" >
 					<div class="list-group-item" ng-repeat="student in Students" ng-click="openStudentInfo(student)">
 						<h4 class="list-group-item-heading">{{student.first_name}} {{student.middle_name}} {{student.last_name}} {{student.suffix_name}}</h4>
-						<p class="list-group-item-text">{{student.id}} | <span ng-repeat="yearlevel in YearLevels | filter:{id: student.year_level_id}" >{{yearlevel.name}}</span></p>
+						<p class="list-group-item-text">{{student.id}} | <span ng-repeat="yearlevel in YearLevels | filter:{id: student.year_level_id}" ng-if="student.year_level_id">{{yearlevel.name}}</span></p>
 					</div>
 				</div>
 				<div class="list-group-item list-group-search-box">
