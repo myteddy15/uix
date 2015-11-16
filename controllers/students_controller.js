@@ -2,13 +2,14 @@
 define(['app','api'], function (app) {
     app.register.controller('StudentController',['$scope','$rootScope','api', function ($scope,$rootScope,api) {
 		$scope.index = function(){
-			//wrap this in init function
+			$scope.init = function(){
 			$scope.Student={};
 			$scope.hasBasicInfo=false;
 			$scope.hasContactInfo=false;
 			$scope.Departments=[];
 			$scope.ActiveStep=1;
-			//
+			};
+			$scope.init();
 			api.GET('educ_levels',function success(response){
 				console.log(response.data);
 				$scope.Departments=response.data;	
@@ -109,6 +110,10 @@ define(['app','api'], function (app) {
 			$scope.sendInfo = function(){
 				api.POST('students',$scope.Student,function success(response){
 				console.log(response.data);
+				$scope.init();
+				$scope.clearField();
+				$scope.clearField2();
+				$scope.ActiveStep=1;
 				//reset student info and step
 				//call init
 				//clearField clearField2
